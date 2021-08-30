@@ -1,0 +1,126 @@
+.login-background {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-size: 62.5%;
+
+  .login-container {
+    width: 30rem;
+    height: 40rem;
+    background-color: #fff;
+    padding: 3rem 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    .login-content {
+      .login-title > h1 {
+        font-weight: bold;
+      }
+
+      .login-input {
+        margin-top: 1rem;
+        font-size: 1.4rem;
+        color: gray;
+
+        .input-password {
+          position: relative;
+
+          i {
+            position: absolute;
+            right: 0;
+            top: 25%;
+            transform: translate(-50%);
+            align-content: center;
+            justify-content: center;
+            transition: 0.5s;
+          }
+
+          i:hover {
+            color: black;
+            cursor: pointer;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .login-input > input {
+        outline: none;
+      }
+
+      .btn-login {
+        display: inline-block;
+        width: 100%;
+        font-size: 1.5rem;
+        outline: none;
+        margin-top: 1rem;
+        border-radius: 0.3rem;
+        border: none;
+        color: white;
+        font-weight: bold;
+        background: linear-gradient(
+          90deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(253, 187, 45, 1) 100%
+        );
+        margin-bottom: 1rem;
+      }
+
+      .login-forgot-password {
+        font-size: 1.2rem;
+      }
+
+      .login-forgot-password:hover {
+        color: green;
+      }
+
+      .text-other-login {
+        display: inline-block;
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .social-login {
+        margin-top: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        .google {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-size: 2rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 50%;
+          color: white;
+          background-color: rgb(220, 78, 65);
+        }
+
+        .facebook {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-size: 2rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 50%;
+          color: white;
+          background-color: rgb(59, 89, 152);
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
