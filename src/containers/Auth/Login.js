@@ -6,7 +6,7 @@ import * as actions from "../../store/actions";
 
 import './Login.scss';
 // import { FormattedMessage } from 'react-intl';
-import handleLoginApi from '../../services/userService';
+import { handleLoginApi } from '../../services/userService';
 
 class Login extends Component {
     constructor(props) {
