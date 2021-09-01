@@ -1,12 +1,19 @@
 .title-user {
-    margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
-    color: #04aa6d;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #04aa6d;
+}
+
+.btn-add {
+  width: auto;
+  height: 4rem;
+  padding: 0 2rem;
+  margin-left: 30px;
 }
 
 .users-table {
-    padding: 20px 30px;
+  padding: 20px 30px;
 }
 
 #customers {
@@ -38,28 +45,76 @@
 }
 
 button.btn-edit {
-    width: 50px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: rgba(255, 166, 0, 0.74);
-    font-size: 20px;
-    &:hover {
-        background-color: transparent !important;
-        color: orange;
-    }
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgba(255, 166, 0, 0.74);
+  font-size: 20px;
+  &:hover {
+    background-color: transparent !important;
+    color: orange;
+  }
 }
 
 button.btn-delete {
-    width: 50px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: rgba(255, 0, 0, 0.719);
-    font-size: 20px;
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgba(255, 0, 0, 0.719);
+  font-size: 20px;
 
-    &:hover {
-        background-color: transparent !important;
-        color: rgba(255, 0, 0, 1);
+  &:hover {
+    background-color: transparent !important;
+    color: rgba(255, 0, 0, 1);
+  }
+}
+
+.modal-user-container {
+  .modal-user-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding: 0 50px;
+    // box-sizing: border-box;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 49%;
+      &.max-width {
+        width: 100%;
+      }
+      input {
+        border: 0.5px solid gray;
+        border-radius: 4px;
+        outline: none;
+        height: 30px;
+        padding: 0 10px;
+      }
     }
+  }
+
+  .modal-content {
+    .modal-header {
+      button {
+        background-color: transparent;
+        color: white;
+        font-size: 35px;
+        border: none;
+        font-weight: bold;
+      }
+
+      button:hover {
+        color: rgba(228, 8, 8, 0.87);
+      }
+    }
+  }
+
+  .button {
+    width: auto;
+    height: auto;
+    padding: 5px 20px;
+  }
 }
