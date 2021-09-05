@@ -1,4 +1,26 @@
 {
+
+    "header": {
+        "specialty-menu": "Chuyên khoa",
+        "facility-menu": "Cơ sở y tế",
+        "doctor-menu": "Bác sĩ",
+        "package-menu": "Gói khám bệnh",
+        "support": "Hỗ trợ",
+        "language": "VN"
+    },
+
+
+    "banner": {
+        "basic": "Nền tảng y tế",
+        "title": "Chăm sóc sức khỏe toàn diện",
+        "examination1": "Khám chuyên khoa",
+        "examination2": "Khám từ xa",
+        "examination3": "Khám tổng quát",
+        "examination4": "Xét nghiệm y học",
+        "examination5": "Sức khỏe tinh thần",
+        "examination6": "Khám nha khoa"
+    },
+
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
@@ -31,7 +53,7 @@
             "system-administrator": {
                 "header": "Quản trị hệ thống",
                 "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
+                "user-redux": "Quản lý user",
                 "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
             },
             "system-parameter": {

@@ -10,10 +10,10 @@
   font-size: 62.5%;
 
   .login-container {
-    width: 30rem;
-    height: 40rem;
+    width: 40rem;
+    height: 50rem;
     background-color: #fff;
-    padding: 3rem 3rem;
+    padding: 4rem 4rem;
     position: absolute;
     top: 0;
     right: 0;
@@ -23,11 +23,12 @@
     .login-content {
       .login-title > h1 {
         font-weight: bold;
+        font-size: 3.5rem;
       }
 
       .login-input {
         margin-top: 1rem;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: gray;
 
         .input-password {
@@ -51,16 +52,18 @@
         }
       }
 
-      .login-input > input {
+      .login-input > input, .login-input .input-password > input {
         outline: none;
+        font-size: 1.4rem;
       }
 
       .btn-login {
         display: inline-block;
         width: 100%;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         outline: none;
         margin-top: 1rem;
+        padding: 1rem 0;
         border-radius: 0.3rem;
         border: none;
         color: white;
@@ -74,7 +77,7 @@
       }
 
       .login-forgot-password {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
 
       .login-forgot-password:hover {
@@ -99,9 +102,9 @@
           align-items: center;
           justify-content: center;
           position: relative;
-          font-size: 2rem;
-          width: 3.5rem;
-          height: 3.5rem;
+          font-size: 2.5rem;
+          width: 4rem;
+          height: 4rem;
           border-radius: 50%;
           color: white;
           background-color: rgb(220, 78, 65);
@@ -112,13 +115,13 @@
           align-items: center;
           justify-content: center;
           position: relative;
-          font-size: 2rem;
-          width: 3.5rem;
-          height: 3.5rem;
+          font-size: 2.5rem;
+          width: 4rem;
+          height: 4rem;
           border-radius: 50%;
           color: white;
           background-color: rgb(59, 89, 152);
-          margin-left: 1rem;
+          margin-left: 1.5rem;
         }
       }
     }

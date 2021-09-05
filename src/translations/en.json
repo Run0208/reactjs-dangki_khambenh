@@ -1,4 +1,25 @@
 {
+
+    "header": {
+        "specialty-menu": "Specialty",
+        "facility-menu": "Health facilities",
+        "doctor-menu": "Doctor",
+        "package-menu": "Examination package",
+        "support": "Support",
+        "language": "EN"
+    },
+
+    "banner": {
+        "basic": "Medical background",
+        "title": "Comprehensive health care",
+        "examination1": "Khám chuyên khoa",
+        "examination2": "Specialized examination",
+        "examination3": "General examination",
+        "examination4": "Medical test",
+        "examination5": "Mental health",
+        "examination6": "Dental examination"
+    },
+
     "common": {
         "add": "Add",
         "edit": "Edit",
@@ -31,7 +52,7 @@
             "system-administrator": {
                 "header": "System Administrator",
                 "user-manage": "User manage",
-                "product-manage": "Package manage",
+                "user-redux": "Manage user using redux",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {

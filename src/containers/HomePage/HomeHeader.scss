@@ -1,0 +1,280 @@
+.header-menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7rem;
+  padding: 1.5rem 10rem;
+  background: #fff;
+  z-index: 10;
+
+  .menu-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .menu-left {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 2.5rem;
+        color: rgb(116, 116, 116);
+      }
+
+      .menu-left-logo:hover,
+      i:hover {
+        cursor: pointer;
+      }
+
+      .menu-left-logo {
+        height: 100%;
+        width: 60%;
+        background: url("../../assets/logo.svg") center center no-repeat;
+      }
+    }
+
+    .menu-center {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .menu-list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 5rem;
+        list-style-type: none;
+        .menu-list-item {
+          font-size: 1.6rem;
+          font-weight: bold;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .menu-right {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .menu-support {
+        color: rgb(69, 195, 210);
+        font-size: 1.6rem;
+        padding-right: 8rem;
+
+        &:hover {
+          cursor: pointer;
+          color: rgb(73, 188, 226);
+        }
+      }
+
+      .menu-language-vi {
+        font-weight: 600;
+        font-size: 1.5rem;
+        opacity: 0.5;
+        &.active {
+          opacity: 1;
+          span {
+            color: orange;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+
+      .menu-language-en {
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        opacity: 0.5;
+        &.active {
+          opacity: 1;
+          span {
+            color: blue;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.header-banner {
+  position: relative;
+  background: url("../../assets/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 65rem;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #333;
+
+  .banner-content {
+    height: 60%;
+    width: 100%;
+    padding: 7rem 0;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0.1)
+    );
+    overflow: hidden;
+
+    .banner-name {
+      font-weight: 300;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .banner-title {
+      font-weight: bold;
+      font-size: 3.2rem;
+    }
+
+    .banner-search {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40rem;
+      height: 4rem;
+      margin: 4rem auto;
+      border: none;
+      border-radius: 2rem;
+      color: black;
+
+      i {
+        position: absolute;
+        left: 5%;
+        font-size: 1.4rem;
+        font-weight: 600;
+        z-index: 2;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 2rem;
+        outline: none;
+        padding: 0 6rem;
+        font-size: 1.4rem !important;
+        background-color: rgb(247, 216, 0);
+        z-index: 1;
+      }
+    }
+
+    .banner-app {
+      width: 21%;
+      display: flex;
+      gap: 3rem;
+      margin: 0 auto;
+
+      .app-googleplay {
+        width: 15rem;
+        height: 5rem;
+        background: url("../../assets/google-play.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .app-appstore {
+        width: 15rem;
+        height: 5rem;
+        background: url("../../assets/app-store.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .banner-options {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    color: black;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 1)
+    );
+
+    .option-item {
+      // margin-top: 6rem;
+      width: 15rem;
+      height: 12rem;
+
+      .option-icon {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: #fff;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 5px 5px 10px 0px #333;
+
+        i {
+          font-size: 3rem;
+          color: rgb(253, 134, 23);
+        }
+      }
+
+      .option-title {
+        margin-top: 1rem;
+        span {
+          text-align: center;
+          font-weight: 600;
+          font-size: 1.6rem;
+          transition: 0.5s;
+        }
+
+        &:hover {
+          color: rgb(47, 192, 215);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

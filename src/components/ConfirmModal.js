@@ -55,6 +55,7 @@ class ConfirmModal extends Component {
     }
 
     render() {
+
         const { contentOfConfirmModal } = this.props;
 
         return (
@@ -100,7 +101,7 @@ class ConfirmModal extends Component {
 
 const mapStateToProps = state => {
     return {
-        lang: state.app.language,
+        language: state.app.language,
         contentOfConfirmModal: state.app.contentOfConfirmModal
     };
 };
