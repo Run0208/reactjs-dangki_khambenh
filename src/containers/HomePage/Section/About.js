@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 
 
 import '../HomePage.scss';
@@ -15,9 +15,9 @@ class About extends Component {
                     <iframe 
                         src="https://www.youtube.com/embed/HgpCEFNEyLk" 
                         title="YouTube video player" 
-                        frameborder="0" 
+                        frameBorder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
+                        allowFullScreen
                     ></iframe>
                    </div>
                    <div className="section-about-item-info">
