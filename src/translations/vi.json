@@ -48,6 +48,7 @@
         "position": "Chức danh",
         "role": "Vai trò",
         "image": "Ảnh đại diện",
-        "save": "Lưu"
+        "create": "Thêm mới",
+        "update": "Cập nhật"
     }
 }

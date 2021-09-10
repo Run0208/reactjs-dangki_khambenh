@@ -28,6 +28,10 @@ class TableManageUser extends Component {
         this.props.deleteUser(user.id);
     }
 
+    handleEditUser = (user) => {
+        this.props.handleEditUserFromParent(user);
+    }
+
     render() {
  
         let listUsers = this.state.userArray;   
@@ -39,8 +43,8 @@ class TableManageUser extends Component {
                         <tbody>
                             <tr>
                                 <th>Email</th>
-                                <th>First name</th>
                                 <th>Last name</th>
+                                <th>First name</th>
                                 <th>Address</th>
                                 <th>Actions</th>
                             </tr>
@@ -50,15 +54,22 @@ class TableManageUser extends Component {
                                     return (
                                         <tr key={index}>
                                             <td>{item.email}</td>
-                                            <td>{item.firstName}</td>
                                             <td>{item.lastName}</td>
+                                            <td>{item.firstName}</td>
                                             <td>{item.address}</td>
                                             <td>
-                                                <button className="btn-edit"><i className="fas fa-pencil-alt"></i></button>
+                                                <button 
+                                                    className="btn-edit"
+                                                    onClick={() => this.handleEditUser(item)}
+                                                >
+                                                    <i className="fas fa-pencil-alt"></i>
+                                                </button>
                                                 <button 
                                                     className="btn-delete"
                                                     onClick={() => this.handleDeleteUser(item)}
-                                                ><i className="fas fa-trash-alt"></i></button>
+                                                >
+                                                    <i className="fas fa-trash-alt"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                     )
