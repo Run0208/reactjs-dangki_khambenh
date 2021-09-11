@@ -31,7 +31,7 @@ class UserManage extends Component {
     }
 
     getAllUsersFromReact = async () => {
-        let response = await getAllUsers('All');
+        let response = await getAllUsers('ALL');
         if(response && response.errCode === 0) {
             this.setState({
                 arrUsers: response.users
@@ -119,6 +119,7 @@ class UserManage extends Component {
     render() {
         // console.log('check render', this.state);
         let arrUsers = this.state.arrUsers;
+        console.log(arrUsers);
         return (
             <div className="user-container">
                 <ModalUser
@@ -145,7 +146,7 @@ class UserManage extends Component {
                 </button>
                 <div className="users-table">
                     <table id="customers">
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th>Email</th>
                                 <th>First name</th>
@@ -153,6 +154,8 @@ class UserManage extends Component {
                                 <th>Address</th>
                                 <th>Actions</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             {
                                 arrUsers && arrUsers.map((item, index) => {
                                     return(

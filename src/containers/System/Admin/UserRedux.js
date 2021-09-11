@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES, CRUD_ACTIONS } from '../../../utils'
+import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from '../../../utils'
 import * as actions from '../../../store/actions';
 import Lightbox from 'react-image-lightbox';
 import TableManageUser from './TableManageUser';
@@ -49,7 +49,7 @@ class UserRedux extends Component {
             let arrGender = this.props.gender;
             this.setState({
                 genderArr: arrGender,
-                gender: arrGender && arrGender.length > 0 ? arrGender[0].key : ''
+                gender: arrGender && arrGender.length > 0 ? arrGender[0].keyMap : ''
             })
         }
         if(prevProps.position !== this.props.position) {
@@ -57,14 +57,14 @@ class UserRedux extends Component {
 
             this.setState({
                 positionArr: arrPositon,
-                position: arrPositon && arrPositon.length > 0 ? arrPositon[0].key : ''
+                position: arrPositon && arrPositon.length > 0 ? arrPositon[0].keyMap : ''
             })
         }
         if(prevProps.role !== this.props.role) {
             let arrRole = this.props.role;
             this.setState({
                 roleArr: arrRole,
-                role: arrRole && arrRole.length > 0 ? arrRole[0].key : ''
+                role: arrRole && arrRole.length > 0 ? arrRole[0].keyMap : ''
             })
         }
 
@@ -80,26 +80,27 @@ class UserRedux extends Component {
                 lastName: '',
                 phoneNumber: '',
                 address: '',
-                gender: arrGender && arrGender.length > 0 ? arrGender[0].key : '',
-                position: arrPositon && arrPositon.length > 0 ? arrPositon[0].key : '',
-                role: arrRole && arrRole.length > 0 ? arrRole[0].key : '',
+                gender: arrGender && arrGender.length > 0 ? arrGender[0].keyMap : '',
+                position: arrPositon && arrPositon.length > 0 ? arrPositon[0].keyMap : '',
+                role: arrRole && arrRole.length > 0 ? arrRole[0].keyMap : '',
                 avatar: '',
-                action: CRUD_ACTIONS.CREATE
+                action: CRUD_ACTIONS.CREATE,
+                previewImgUrl: ''
             })
         }
     }
 
 
 
-    handleOnChangeImage = (event) => {
+    handleOnChangeImage = async (event) => {
         let data = event.target.files;
         let file = data[0];
-        
         if(file) {
+            let base64  = await CommonUtils.getBase64(file);
             let objectUrl = URL.createObjectURL(file);
             this.setState({
                 previewImgUrl: objectUrl,
-                avatar: file
+                avatar: base64
             })
         }
     }
@@ -130,7 +131,7 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
-                // avatar: this.state.avatar
+                avatar: this.state.avatar
             })
         }
         if(action === CRUD_ACTIONS.EDIT) {
@@ -146,7 +147,7 @@ class UserRedux extends Component {
                 gender: this.state.gender,
                 roleId: this.state.role,
                 positionId: this.state.position,
-                // avatar: this.state.avatar
+                avatar: this.state.avatar
             })
         }
 
@@ -176,6 +177,11 @@ class UserRedux extends Component {
     }
 
     handleEditUserFromParent = (user) => {
+        let imageBase64 = '';
+        if(user.image) {
+            imageBase64 = new Buffer(user.image, 'base64').toString('binary');
+        }
+
         this.setState({
             userEditId: user.id,
             email: user.email,
@@ -188,6 +194,7 @@ class UserRedux extends Component {
             position: user.positionId,
             role: user.roleId,
             avatar: '',
+            previewImgUrl: imageBase64,
             action: CRUD_ACTIONS.EDIT,
         })
     }
@@ -296,11 +303,11 @@ class UserRedux extends Component {
                                         <select 
                                             className="form-control"
                                             onChange={(event) => { this.onChangeInput(event, 'gender') }}
-                                            value={gender}
+                                            value={gender || ''}
                                         >
                                             {genders && genders.length > 0 && genders.map((item, index) => {
                                                 return (
-                                                    <option key={index} value={item.key}>
+                                                    <option key={index} value={item.keyMap}>
                                                         {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                     </option>
                                                 );
@@ -314,11 +321,11 @@ class UserRedux extends Component {
                                         <select 
                                             className="form-control"
                                             onChange={(event) => { this.onChangeInput(event, 'position') }}
-                                            value={position}
+                                            value={position || ''}
                                         >
                                             {positions && positions.length > 0 && positions.map((item, index) => {
                                                 return (
-                                                    <option key={index} value={item.key}>
+                                                    <option key={index} value={item.keyMap}>
                                                         {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                     </option>
                                                 );
@@ -332,11 +339,11 @@ class UserRedux extends Component {
                                     <select 
                                         className="form-control"
                                         onChange={(event) => { this.onChangeInput(event, 'role') }}
-                                        value={role}
+                                        value={role || ''}
                                     >
                                         {roles && roles.length > 0 && roles.map((item, index) => {
                                             return (
-                                                <option key={index} value={item.key}>
+                                                <option key={index} value={item.keyMap}>
                                                     {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                 </option>
                                             );

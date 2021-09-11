@@ -40,7 +40,7 @@ class TableManageUser extends Component {
                 <h1 className="title-user">TABLE USERS</h1>
                 <div className="users-table">
                     <table id="customers">
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th>Email</th>
                                 <th>Last name</th>
@@ -48,6 +48,9 @@ class TableManageUser extends Component {
                                 <th>Address</th>
                                 <th>Actions</th>
                             </tr>
+                        </thead>
+
+                        <tbody>
                             {
                                 listUsers && listUsers.length > 0 && 
                                 listUsers.map((item, index) => {
@@ -72,11 +75,9 @@ class TableManageUser extends Component {
                                                 </button>
                                             </td>
                                         </tr>
-                                    )
-                                    
+                                    );
                                 })
                             }
-                            
                         </tbody>
                     </table>
                 </div>
