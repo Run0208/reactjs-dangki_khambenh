@@ -11,7 +11,7 @@
     },
 
     "banner": {
-        "basic": "Medical background",
+        "basic": "Medical Platform",
         "title": "Comprehensive health care",
         "examination1": "Khám chuyên khoa",
         "examination2": "Specialized examination",
@@ -50,5 +50,9 @@
         "image": "Avatar",
         "create": "Create",
         "update": "Update"
+    },
+    "home-page": {
+        "see-more": "See more",
+        "outstanding-doctor": "Outstanding Doctor"
     }
 }

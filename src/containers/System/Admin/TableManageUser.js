@@ -36,52 +36,52 @@ class TableManageUser extends Component {
  
         let listUsers = this.state.userArray;   
         return (
-            <div className="user-container">
-                <h1 className="title-user">TABLE USERS</h1>
-                <div className="users-table">
-                    <table id="customers">
-                        <thead>
-                            <tr>
-                                <th>Email</th>
-                                <th>Last name</th>
-                                <th>First name</th>
-                                <th>Address</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
+                <div className="user-container">
+                    <h1 className="title-user">TABLE USERS</h1>
+                    <div className="users-table">
+                        <table id="customers">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Last name</th>
+                                    <th>First name</th>
+                                    <th>Address</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            {
-                                listUsers && listUsers.length > 0 && 
-                                listUsers.map((item, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <td>{item.email}</td>
-                                            <td>{item.lastName}</td>
-                                            <td>{item.firstName}</td>
-                                            <td>{item.address}</td>
-                                            <td>
-                                                <button 
-                                                    className="btn-edit"
-                                                    onClick={() => this.handleEditUser(item)}
-                                                >
-                                                    <i className="fas fa-pencil-alt"></i>
-                                                </button>
-                                                <button 
-                                                    className="btn-delete"
-                                                    onClick={() => this.handleDeleteUser(item)}
-                                                >
-                                                    <i className="fas fa-trash-alt"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    );
-                                })
-                            }
-                        </tbody>
-                    </table>
+                            <tbody>
+                                {
+                                    listUsers && listUsers.length > 0 && 
+                                    listUsers.map((item, index) => {
+                                        return (
+                                            <tr key={index}>
+                                                <td>{item.email}</td>
+                                                <td>{item.lastName}</td>
+                                                <td>{item.firstName}</td>
+                                                <td>{item.address}</td>
+                                                <td>
+                                                    <button 
+                                                        className="btn-edit"
+                                                        onClick={() => this.handleEditUser(item)}
+                                                    >
+                                                        <i className="fas fa-pencil-alt"></i>
+                                                    </button>
+                                                    <button 
+                                                        className="btn-delete"
+                                                        onClick={() => this.handleDeleteUser(item)}
+                                                    >
+                                                        <i className="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
         );
     }
 }

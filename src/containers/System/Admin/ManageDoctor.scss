@@ -1,0 +1,86 @@
+.manage-doctor {
+    margin-bottom: 50rem !important;
+    &-title {
+        text-transform: uppercase;
+        text-align: center;
+        margin: 2rem 0;
+        font-weight: bold;
+        color: green;
+    }
+
+    &-more-info {
+        width: 100%;
+        padding: 0 5rem;
+        margin-bottom: 5rem;
+        display: flex;
+        column-gap: 2rem;
+
+        label {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .more-info-left {
+            width: 50%;
+
+            &-select {
+                font-size: 1.6rem;
+                outline: none;
+                border: none;
+            }
+        }
+        
+        .more-info-right {
+            width: 50%;
+
+
+            .form-control {
+                width: 100%;
+                font-size: 1.6rem;
+            }
+        }
+
+
+    }
+
+    &-editor {
+        padding: 0 5rem;
+    }
+    
+    .save-doctor {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        margin: 5rem;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        background-color: green;
+        transition: all 0.2s linear;
+        float: right;
+
+
+        &:hover {
+            background-color: rgb(1, 80, 1);
+        }
+    }
+
+    .create-doctor {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        margin: 5rem;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        background-color: blue;
+        transition: all 0.2s linear;
+        float: right;
+
+        &:hover {
+            background-color: rgb(1, 80, 1);
+        }
+    }
+
+
+}

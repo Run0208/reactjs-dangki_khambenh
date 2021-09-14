@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils';
+import { withRouter } from 'react-router';
+import { FormattedMessage } from 'react-intl';
 import { changeLanguageApp } from '../../store/actions';
 
 import './HomeHeader.scss';
-
-
 
 class HomeHeader extends Component {
 
     changeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
+    }
+
+    returnToHome = () => {
+        if(this.props.history) {
+            this.props.history.push(`/home`);
+        }
     }
 
     render() {
@@ -22,7 +27,7 @@ class HomeHeader extends Component {
                     <div className="menu-content">
                         <div className="menu-left">
                             <i className="fas fa-bars"></i>
-                            <div className="menu-left-logo"></div>
+                            <div className="menu-left-logo" onClick={() => this.returnToHome()}></div>
                         </div>
                         <div className="menu-center">
                             <ul className="menu-list">
@@ -56,88 +61,90 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-                
-                <div className="header-banner">
-                    <div className="banner-content">
-                        <h1 className="banner-name">
-                            <FormattedMessage id="banner.basic"/>
-                        </h1>
-                        <h2 className="banner-title">
-                        <FormattedMessage id="banner.title"/>
-                        </h2>
-                        <div className="banner-search">
-                            <i className="fas fa-search"></i>
-                            <input type="text" placeholder="Search..." />
+                {
+                    this.props.isShowBanner === true && 
+                    <div className="header-banner">
+                        <div className="banner-content">
+                            <h1 className="banner-name">
+                                <FormattedMessage id="banner.basic"/>
+                            </h1>
+                            <h2 className="banner-title">
+                            <FormattedMessage id="banner.title"/>
+                            </h2>
+                            <div className="banner-search">
+                                <i className="fas fa-search"></i>
+                                <input type="text" placeholder="Search..." />
+                            </div>
+                            <div className="banner-app">
+                                <div className="app-googleplay"></div>
+                                <div className="app-appstore"></div>
+                            </div>
                         </div>
-                        <div className="banner-app">
-                            <div className="app-googleplay"></div>
-                            <div className="app-appstore"></div>
+                        <div className="banner-options">
+                            <div className="option-item">
+                                <div className="option-icon">
+                                    <i className="fas fa-hospital"></i>
+                                </div>
+                                <div className="option-title">
+                                    <span>
+                                        <FormattedMessage id="banner.examination1"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="option-item">
+                                <div className="option-icon">
+                                    <i className="fas fa-hospital"></i>
+                                </div>
+                                <div className="option-title">
+                                    <span>
+                                        <FormattedMessage id="banner.examination2"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="option-item">
+                                <div className="option-icon">
+                                    <i className="fas fa-hospital"></i>
+                                </div>
+                                <div className="option-title">
+                                    <span>
+                                        <FormattedMessage id="banner.examination3"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="option-item">
+                                <div className="option-icon">
+                                    <i className="fas fa-hospital"></i>
+                                </div>
+                                <div className="option-title">
+                                    <span>
+                                        <FormattedMessage id="banner.examination4"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="option-item">
+                                <div className="option-icon">
+                                    <i className="fas fa-hospital"></i>
+                                </div>
+                                <div className="option-title">
+                                    <span>
+                                        <FormattedMessage id="banner.examination5"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="option-item">
+                                <div className="option-icon">
+                                    <i className="fas fa-hospital"></i>
+                                </div>
+                                <div className="option-title">
+                                    <span>
+                                        <FormattedMessage id="banner.examination6"/>
+                                    </span>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
-                    <div className="banner-options">
-                        <div className="option-item">
-                            <div className="option-icon">
-                                <i className="fas fa-hospital"></i>
-                            </div>
-                            <div className="option-title">
-                                <span>
-                                    <FormattedMessage id="banner.examination1"/>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="option-item">
-                            <div className="option-icon">
-                                <i className="fas fa-hospital"></i>
-                            </div>
-                            <div className="option-title">
-                                <span>
-                                    <FormattedMessage id="banner.examination2"/>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="option-item">
-                            <div className="option-icon">
-                                <i className="fas fa-hospital"></i>
-                            </div>
-                            <div className="option-title">
-                                <span>
-                                    <FormattedMessage id="banner.examination3"/>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="option-item">
-                            <div className="option-icon">
-                                <i className="fas fa-hospital"></i>
-                            </div>
-                            <div className="option-title">
-                                <span>
-                                    <FormattedMessage id="banner.examination4"/>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="option-item">
-                            <div className="option-icon">
-                                <i className="fas fa-hospital"></i>
-                            </div>
-                            <div className="option-title">
-                                <span>
-                                    <FormattedMessage id="banner.examination5"/>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="option-item">
-                            <div className="option-icon">
-                                <i className="fas fa-hospital"></i>
-                            </div>
-                            <div className="option-title">
-                                <span>
-                                    <FormattedMessage id="banner.examination6"/>
-                                </span>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+                }
             </React.Fragment>
             
         );
@@ -157,4 +164,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));

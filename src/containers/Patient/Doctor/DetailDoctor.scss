@@ -1,0 +1,89 @@
+.container-doctor {
+    width: 100%;
+    height: 100%;
+    .intro-doctor {
+        display: flex;
+        width: 100%;
+        height: 20rem;
+        padding: 2rem 15rem;
+        column-gap: 2rem;
+
+        &-image {
+            width: 16rem;
+            height: 16rem;
+            background: center center no-repeat;
+            border-radius: 50%;
+            background-size: cover;
+        
+        }
+
+        &-content {
+            width: 84%;
+            padding: 1rem 1rem;
+            position: relative;
+            display: inline-block;
+            flex-direction: column;
+
+            h2 {
+                font-size: 2.8rem;
+                font-weight: bold;
+            }
+
+            span {
+                font-size: 1.6rem;
+            }
+
+            .facebook {
+                display: flex;
+                align-content: space-between;
+                justify-content: start;
+                column-gap: 1rem;
+                margin-top: 2rem;
+
+                .btn {
+                    padding: 0.2rem 2rem;
+                    background-color: rgb(15,143,242);
+                    font-size: 1.5rem;
+                    color: white;
+                    font-weight: 600;
+                }
+
+                &-like {
+
+                } 
+
+                &-share {
+
+                }
+            }
+        }
+    }
+
+    .schedule-doctor {
+
+    }
+
+    .infor-doctor {
+        width: 100%;
+        height: auto;
+        padding: 1rem 15rem;
+        font-size: 1.5rem;
+        background-color: rgb(250,250,250);
+        border-top: 1px solid rgb(173, 173, 173);
+        border-bottom: 1px solid rgb(173, 173, 173);
+
+        ul {
+            padding: 0 3rem;
+        }
+
+        img {
+            width: 100%;
+            padding: 2rem 2rem;
+        }
+    }
+
+    .comment-doctor {
+
+    }
+
+}

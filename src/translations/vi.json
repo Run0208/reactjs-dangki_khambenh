@@ -50,5 +50,9 @@
         "image": "Ảnh đại diện",
         "create": "Thêm mới",
         "update": "Cập nhật"
+    },
+    "home-page": {
+        "see-more": "Xem thêm",
+        "outstanding-doctor": "Bác sĩ nổi bật"
     }
 }

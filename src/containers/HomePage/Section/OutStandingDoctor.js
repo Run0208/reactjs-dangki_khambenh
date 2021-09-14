@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
-import * as actions from '../../../store/actions';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { LANGUAGES } from '../../../utils';
+import { FormattedMessage } from 'react-intl';
+import * as actions from '../../../store/actions';
 
 import '../HomePage.scss';
 
@@ -27,7 +28,11 @@ class Specialty extends Component {
         }
     }
     
-    
+    handleViewDetailDoctor = (doctor) => {
+        if(this.props.history) {
+            this.props.history.push(`/detail-doctor/${doctor.id}`)
+        }
+    }
 
     render() {
         let arrDoctors = this.state.arrDoctors;
@@ -36,8 +41,12 @@ class Specialty extends Component {
            <section className="section-container section-doctor">
                <div className="section-content">
                     <div className="section-header">
-                        <h2>Outstanding Doctor</h2>
-                        <button>Tìm kiếm</button>
+                        <h2>
+                            <FormattedMessage id="home-page.outstanding-doctor" />
+                        </h2>
+                        <button>
+                            <FormattedMessage id="home-page.see-more" />
+                        </button>
                     </div>
                     <div className="section-list">
                         <Slider {...this.props.settings}>
@@ -51,7 +60,11 @@ class Specialty extends Component {
                                     let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                                     let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                                     return (
-                                        <div className="section-item section-item-doctor" key={index}>
+                                        <div 
+                                            className="section-item section-item-doctor" 
+                                            key={index}
+                                            onClick={() => this.handleViewDetailDoctor(item)}
+                                        >
                                             <div 
                                                 className="section-image doctor-image"
                                                 style={{backgroundImage: `url(${imageBase64})`}}
@@ -88,4 +101,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Specialty));
