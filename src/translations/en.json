@@ -9,7 +9,6 @@
         "language": "EN",
         "welcome": "Welcome, "
     },
-
     "banner": {
         "basic": "Medical Platform",
         "title": "Comprehensive health care",
@@ -20,7 +19,6 @@
         "examination5": "Mental health",
         "examination6": "Dental examination"
     },
-
     "menu": {
         "admin": {
             "manage-user": "User System",
@@ -34,6 +32,9 @@
             "manage-specialty": "Specialized management",
             "handbook": "Handbook",
             "manage-handbook": "Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor Schedule"
         }
     },
     "manage-user" : {
@@ -54,5 +55,11 @@
     "home-page": {
         "see-more": "See more",
         "outstanding-doctor": "Outstanding Doctor"
+    },
+    "manage-schedule": {
+        "title": "Manage medical examination plan",
+        "choose-doctor": "Choose doctor",
+        "choose-date": "Choose day/month/year",
+        "btn-save": "Save information"
     }
 }

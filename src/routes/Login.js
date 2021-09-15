@@ -28,6 +28,19 @@ class Login extends Component {
         ...this.initialState
     };
 
+    
+    componentDidMount() {
+        document.addEventListener('keydown', this.handlerKeyDown);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handlerKeyDown);
+        // fix Warning: Can't perform a React state update on an unmounted component
+        this.setState = (state, callback) => {
+            return;
+        };
+    }
+
     refresh = () => {
         this.setState({
             ...this.initialState
@@ -84,17 +97,6 @@ class Login extends Component {
         }
     };
 
-    componentDidMount() {
-        document.addEventListener('keydown', this.handlerKeyDown);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('keydown', this.handlerKeyDown);
-        // fix Warning: Can't perform a React state update on an unmounted component
-        this.setState = (state, callback) => {
-            return;
-        };
-    }
 
     render() {
         const { username, password, loginError } = this.state;
