@@ -60,6 +60,22 @@
     }
 
     .schedule-doctor {
+        width: 100%;
+        height: auto;
+        padding: 2rem 15rem;
+        border-top: 1px solid gray;
+        font-size: 1.6rem;
+        display: flex;
+
+        &-left {
+            width: 70%;
+            height: auto;
+        }
+
+        &-right {
+            width: 30%;
+            height: auto;
+        }
 
     }
 

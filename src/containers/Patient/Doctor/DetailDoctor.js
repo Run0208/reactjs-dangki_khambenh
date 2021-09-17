@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { LANGUAGES } from '../../../utils';
 import HomeHeader from '../../HomePage/HomeHeader';
+import DoctorSchedule from './DoctorSchedule';
 import { getDetailInforDoctor } from '../../../services/userService';
 
 import './DetailDoctor.scss';
@@ -54,7 +55,6 @@ class DetailDoctor extends Component {
                             <div className="doctor-title">
                                 <h2>
                                     { language === LANGUAGES.VI ? nameVi : nameEn }
-                                        {/* Bác sĩ cao cấp Nguyễn Duy Hưng */}
                                 </h2>
                             </div>
 
@@ -75,7 +75,16 @@ class DetailDoctor extends Component {
                             </div>
                         </div>
                     </section>
-                    <section className="schedule-doctor"></section>
+                    <section className="schedule-doctor">
+                        <div className="schedule-doctor-left">
+                            <DoctorSchedule 
+                                doctorIdFromParent={detailDoctor && detailDoctor.id ? detailDoctor.id : -1}
+                            />
+                        </div>
+                        <div className="schedule-doctor-right">
+                                
+                        </div>
+                    </section>
                     <section className="infor-doctor">
                         {
                             detailDoctor && 
