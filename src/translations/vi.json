@@ -68,6 +68,13 @@
             "choose": "Chọn ",
             "end-book": " và đặt lịch (miễn phí)", 
             "no-schedule": "Hiện tại bác sĩ không có lịch hẹn vào hôm nay, vui lòng chọn ngày khác !"
+        },
+        "extra-infor-doctor": {
+            "examination-address": "Địa chỉ khám",
+            "examination-price": "Giá khám:", 
+            "see-details": "Xem chi tiết",
+            "hidden": "Ẩn chi tiết",
+            "payment": "Phương thức thanh toán: "
         }
     },
     "admin": {

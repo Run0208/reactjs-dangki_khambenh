@@ -68,6 +68,13 @@
             "choose": "Choose ",
             "end-book": " and book (free)", 
             "no-schedule": "The doctor currently does not have an appointment for today, please choose another date !"
+        },
+        "extra-infor-doctor": {
+            "examination-address": "Examination address",
+            "examination-price": "Examination price:", 
+            "see-details": "See details",
+            "hidden": "Hide details",
+            "payment": "Payment methods: "
         }
     },
     "admin": {

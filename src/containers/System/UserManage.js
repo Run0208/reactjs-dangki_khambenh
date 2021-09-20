@@ -117,9 +117,7 @@ class UserManage extends Component {
     }
 
     render() {
-        // console.log('check render', this.state);
         let arrUsers = this.state.arrUsers;
-        console.log(arrUsers);
         return (
             <div className="user-container">
                 <ModalUser

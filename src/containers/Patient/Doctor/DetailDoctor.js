@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { LANGUAGES } from '../../../utils';
-import HomeHeader from '../../HomePage/HomeHeader';
 import DoctorSchedule from './DoctorSchedule';
+import DoctorExtraInfor from './DoctorExtraInfor';
+import HomeHeader from '../../HomePage/HomeHeader';
 import { getDetailInforDoctor } from '../../../services/userService';
 
 import './DetailDoctor.scss';
@@ -87,7 +88,9 @@ class DetailDoctor extends Component {
                             />
                         </div>
                         <div className="schedule-doctor-right">
-                                
+                            <DoctorExtraInfor 
+                                doctorIdFromParent={ this.state.currentDoctorId }
+                            />
                         </div>
                     </section>
                     <section className="infor-doctor">
