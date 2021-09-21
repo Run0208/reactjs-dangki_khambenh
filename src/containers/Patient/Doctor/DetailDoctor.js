@@ -53,8 +53,7 @@ class DetailDoctor extends Component {
 
                 <div className="container-doctor">
                     <section className="intro-doctor">
-                        <div 
-                            className="intro-doctor-image"
+                        <div className="intro-doctor-image"
                             style={{ backgroundImage: `url(${detailDoctor && detailDoctor.image ? detailDoctor.image : ''})` }}
                         ></div>
                         <div className="intro-doctor-content">
