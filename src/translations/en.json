@@ -76,6 +76,19 @@
             "hidden": "Hide details",
             "payment": "Payment methods: "
         }
+        ,
+        "booking-modal": {
+            "title": "Information to book a medical appointment",
+            "full-name": "Full name",
+            "email": "Email",
+            "phone-number": "Phone number",
+            "address": "Address",
+            "gender": "Gender",
+            "date-of-birth": "Date of birth",
+            "reason": "Reasons for medical examination",
+            "comfirm": "Confirm",
+            "cancel": "Cancel"
+        }
     },
     "admin": {
         "manage-doctor": {

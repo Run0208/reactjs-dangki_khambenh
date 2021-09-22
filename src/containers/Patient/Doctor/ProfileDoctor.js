@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from "react-redux";
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
@@ -6,6 +7,7 @@ import NumberFormat from 'react-number-format';
 import { getProfileDoctor } from '../../../services/userService';
 
 import './ProfileDoctor.scss';
+import moment from 'moment';
 
 
 class ProfileDoctor extends Component {
@@ -43,10 +45,32 @@ class ProfileDoctor extends Component {
         }
         return result;
     }
+
+    renderTimeBooking = (dataTime) => {
+        let { language } = this.props;
+        if(dataTime && !_.isEmpty(dataTime)) {
+            let time = language === LANGUAGES.VI ? dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn
+
+            let date = language === LANGUAGES.VI ?
+                moment.unix( + dataTime.date / 1000 ).format('dddd - DD/MM/YYYY') :
+                moment.unix( + dataTime.date / 1000 ).locale('en').format('dddd - MM/DD/YYYY')
+            return (
+                <>
+                    <div>
+                        {time} - {date}
+                    </div>
+                    <div>
+                        16:00 - 17:00 - 20/08/2021
+                    </div>
+                </>
+            )
+        }
+        return <></>
+    }
     
     render() {
         let { dataProfile } = this.state;
-        let { language } = this.props;
+        let { language, isShowDescDoctor, dataTime } = this.props;
         let nameVi = '', nameEn = '';
         if(dataProfile && dataProfile.positionData) {
             nameVi = `${dataProfile.positionData.valueVi}, ${dataProfile.lastName} ${dataProfile.firstName}`;
@@ -69,35 +93,39 @@ class ProfileDoctor extends Component {
                         </div>
 
                         <div className="doctor-intro">
-                            <div>
-                                {
-                                    dataProfile &&
-                                    dataProfile.Markdown && 
-                                    dataProfile.Doctor_Infor.nameClinic && 
-                                    <span>
-                                        { dataProfile.Doctor_Infor.nameClinic }
-                                    </span>
-                                }
-                            </div>
-                            <div>
-                                {
-                                    dataProfile &&
-                                    dataProfile.Markdown && 
-                                    dataProfile.Doctor_Infor.addressClinic && 
-                                    <span>
-                                        { dataProfile.Doctor_Infor.addressClinic }
-                                    </span>
-                                }
-                            </div>
+                            {isShowDescDoctor === true ?
+                                <>
+                                        {
+                                            dataProfile &&
+                                            dataProfile.Markdown && 
+                                            dataProfile.Markdown.description && 
+                                            <span>
+                                                { dataProfile.Markdown.description }
+                                            </span>
+                                        }
+                                </> 
+                                : 
+                                <>
+                                    {this.renderTimeBooking(dataTime)}
+                                </>
+                            }
                             <div>
                                 <i className="fas fa-map-marker-alt"></i>
                                 {
                                     dataProfile &&
-                                    dataProfile.Markdown && 
-                                    dataProfile.Doctor_Infor.provinceIdData && 
-                                    <span>
+                                    dataProfile.Doctor_Infor && 
+                                    dataProfile.Doctor_Infor.provinceIdData && language === LANGUAGES.VI &&
+                                    <span className="address">
                                         { dataProfile.Doctor_Infor.provinceIdData.valueVi }
-                                    </span>
+                                    </span> 
+                                }
+                                {
+                                    dataProfile &&
+                                    dataProfile.Doctor_Infor && 
+                                    dataProfile.Doctor_Infor.provinceIdData && language === LANGUAGES.EN &&
+                                    <span className="address">
+                                        { dataProfile.Doctor_Infor.provinceIdData.valueEn }
+                                    </span> 
                                 }
                             </div>
                             

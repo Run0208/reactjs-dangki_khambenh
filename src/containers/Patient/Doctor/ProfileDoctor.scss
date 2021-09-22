@@ -8,6 +8,7 @@
         height: 12rem;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         border-radius: 50%;
     }
 
@@ -30,6 +31,10 @@
 
         .doctor-intro {
             display: inline-block;
+
+            .address {
+                margin-left: 1rem;
+            }
         }
     }
 }
