@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import moment from 'moment';
 import { connect } from "react-redux";
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
@@ -7,7 +8,6 @@ import NumberFormat from 'react-number-format';
 import { getProfileDoctor } from '../../../services/userService';
 
 import './ProfileDoctor.scss';
-import moment from 'moment';
 
 
 class ProfileDoctor extends Component {
@@ -58,9 +58,6 @@ class ProfileDoctor extends Component {
                 <>
                     <div>
                         {time} - {date}
-                    </div>
-                    <div>
-                        16:00 - 17:00 - 20/08/2021
                     </div>
                 </>
             )

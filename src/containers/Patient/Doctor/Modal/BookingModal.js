@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import moment from 'moment';
 import Select from 'react-select';
 import { Modal } from 'reactstrap';
 import { connect } from "react-redux";
@@ -98,7 +99,13 @@ class BookingModal extends Component {
     }
 
     handleConfirmBooking = async () => {
+        
         let date = new Date(this.state.birthday).getTime();
+        
+        let timeString = this.buildTimeBooking(this.props.dataTime);
+
+        let doctorName = this.buildDoctorName(this.props.dataTime);
+
         let res = await postBookAppointment({
             fullName: this.state.fullName,
             phoneNumber: this.state.phoneNumber,
@@ -108,7 +115,10 @@ class BookingModal extends Component {
             date: date,
             doctorId: this.state.doctorId,
             selectedGenders: this.state.selectedGenders.value,
-            timeType: this.state.timeType
+            timeType: this.state.timeType,
+            language: this.props.language,
+            timeString: timeString,
+            doctorName: doctorName
         })
 
         if(res && res.errCode === 0) {
@@ -118,6 +128,30 @@ class BookingModal extends Component {
             toast.error("Booking a new appointment error !");
             this.props.closeBookingModal();
         }
+    }
+
+    buildTimeBooking = (dataTime) => {
+        let { language } = this.props;
+        if(dataTime && !_.isEmpty(dataTime)) {
+            let time = language === LANGUAGES.VI ? dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn
+
+            let date = language === LANGUAGES.VI ?
+                moment.unix( + dataTime.date / 1000 ).format('dddd - DD/MM/YYYY') :
+                moment.unix( + dataTime.date / 1000 ).locale('en').format('dddd - MM/DD/YYYY');
+            return `${time} - ${date}`
+        }
+        return '';
+    }
+    buildDoctorName = (dataTime) => {
+        let { language } = this.props;
+        if(dataTime && !_.isEmpty(dataTime)) {
+            let name = language === LANGUAGES.VI ?
+            `${dataTime.doctorIdData.lastName} ${dataTime.doctorIdData.firstName}`
+            :
+            `${dataTime.doctorIdData.firstName} ${dataTime.doctorIdData.lastName}`
+            return name;
+        }
+        return '';
     }
     
     render() {
