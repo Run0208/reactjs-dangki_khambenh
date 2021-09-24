@@ -1,0 +1,15 @@
+.verify {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5rem;
+    text-transform: uppercase;
+
+    .success {
+        color: rgb(0, 172, 0);
+    }
+
+    .failed {
+        color: orange;
+    }
+}
