@@ -9,7 +9,8 @@ const initialState = {
     topDoctors: [],
     allDoctors: [],
     allScheduleTime: [],
-    allRequireDoctorInfor: []
+    allRequireDoctorInfor: [],
+    
 }
 
 const adminReducer = (state = initialState, action) => {

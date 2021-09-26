@@ -11,11 +11,12 @@ import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authenticati
 import Login from './Auth/Login';
 import Home from '../routes/Home';
 import System from '../routes/System';
+import Doctor from '../routes/Doctor';
 import HomePage from './HomePage/HomePage.js';
+import VerifyEmail from './Patient/VerifyEmail';
 import DetailDoctor from './Patient/Doctor/DetailDoctor';
 import CustomScrollbars from '../components/CustomScrollbars';
-import Doctor from '../routes/Doctor';
-import VerifyEmail from './Patient/VerifyEmail';
+import DetailSpecialty from './Patient/Specialty/DetailSpecialty';
 
 
 
@@ -56,6 +57,8 @@ class App extends Component {
 
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
+                                    <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
+
                                     <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
                                 </Switch>                            
                             </div>

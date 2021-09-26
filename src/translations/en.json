@@ -54,7 +54,8 @@
     },
     "home-page": {
         "see-more": "See more",
-        "outstanding-doctor": "Outstanding Doctor"
+        "outstanding-doctor": "Outstanding Doctor",
+        "specialty-popular": "Popular Specialty"
     },
     "manage-schedule": {
         "title": "Manage medical examination plan",
@@ -92,8 +93,8 @@
     },
     "admin": {
         "manage-doctor": {
-            "title": "more doctor information",
-            "choose-doctor": "choose doctor",
+            "title": "More doctor information",
+            "choose-doctor": "Choose doctor",
             "intro-infor": "Introduction information",
             "create-infor": "Create infor",
             "update-infor": "Update infor",
@@ -102,7 +103,9 @@
             "province": "Province/city",
             "address": "Clinic address",
             "clinic-name": "Clinic name",
-            "note": "Note"
+            "note": "Note",
+            "specialty": "Choose specialty",
+            "clinic": "Choose clinic"
         }
     }
 }

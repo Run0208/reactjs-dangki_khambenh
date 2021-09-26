@@ -54,7 +54,8 @@
     },
     "home-page": {
         "see-more": "Xem thêm",
-        "outstanding-doctor": "Bác sĩ nổi bật"
+        "outstanding-doctor": "Bác sĩ nổi bật",
+        "specialty-popular": "Chuyên khoa phổ biến"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh",
@@ -102,7 +103,9 @@
             "province": "Tỉnh/thành phố",
             "address": "Địa chỉ",
             "note": "Ghi chú",
-            "clinic-name": "Tên phòng khám"
+            "clinic-name": "Tên phòng khám",
+            "specialty": "Chọn chuyên khoa",
+            "clinic": "Chọn phòng khám"
         }
     }
 }
