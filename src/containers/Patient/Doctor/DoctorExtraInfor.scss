@@ -1,11 +1,13 @@
 .doctor-extra-infor {
-  padding: 5.5rem 0 0 3rem;
-
+  margin-top: 6rem;
+  padding: 2rem 0 0 2rem;
+  border-left: 1px solid rgb(200, 200, 200);
   .infor-clinic {
     width: 100%;
     display: inline-block;
     border-bottom: 1px solid rgb(201, 201, 201);
     padding: 0 0 1rem 0;
+    
     &-title {
       font-weight: bold;
       text-transform: uppercase;
