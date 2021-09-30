@@ -1,12 +1,42 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { FormattedMessage } from 'react-intl';
+import { getAllClinic } from '../../../services/userService';
+
 
 import '../HomePage.scss';
 
 class Facility extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataClinic: []
+        }
+    }
+
+    async componentDidMount() {
+        let res = await getAllClinic();
+        if(res && res.errCode === 0) {
+            this.setState({
+                dataClinic: res.data ? res.data : []
+            })
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        
+    }
+    
+    handleviewDetailClinic = (item) => {
+        if(this.props.history) {
+            this.props.history.push(`/detail-clinic/${item.id}`)
+        }
+    }
+
     render() {
+        let { dataClinic } = this.state;
         return (
            <section className="section-container section-facility">
                <div className="section-content">
@@ -16,30 +46,22 @@ class Facility extends Component {
                     </div>
                     <div    className="section-list">
                         <Slider {...this.props.settings}>
-                            <div className="section-item section-item-facility">
-                                <div className="section-image facility-image "></div>
-                                <span>Cơ xương khớp</span>
-                            </div>
-                            <div className="section-item section-item-facility">
-                                <div className="section-image facility-image"></div>
-                                <span>Thần kinh</span>
-                            </div>
-                            <div className="section-item section-item-facility">
-                                <div className="section-image facility-image"></div>
-                                <span>Tiêu hóa</span>
-                            </div>
-                            <div className="section-item section-item-facility">
-                                <div className="section-image facility-image"></div>
-                                <span>Tim mạch</span>
-                            </div>
-                            <div className="section-item section-item-facility">
-                                <div className="section-image facility-image"></div>
-                                <span>Tai mũi họng</span>
-                            </div>
-                            <div className="section-item section-item-facility">
-                                <div className="section-image facility-image"></div>
-                                <span>Cốt sống</span>
-                            </div>
+                            {
+                                dataClinic && dataClinic.length > 0 &&
+                                dataClinic.map((item, index) => {
+                                    return (
+                                        <div className="section-item section-item-facility" 
+                                            key={index}
+                                            onClick={() => this.handleviewDetailClinic(item)}
+                                        >
+                                            <div className="section-image facility-image"
+                                                style={{backgroundImage: `url(${item.image})`}}
+                                            ></div>
+                                            <span>{item.name}</span>
+                                        </div>
+                                    );
+                                })
+                            }
                             
                         </Slider>
                     </div>
@@ -62,4 +84,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Facility);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Facility));

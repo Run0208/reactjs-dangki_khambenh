@@ -8,6 +8,9 @@
     height: auto;
     padding: 1rem 15rem;
     line-height: 2;
+    background-color: white;
+    min-height: 50rem;
+    margin-top: 2rem;
 
     h2 {
       font-size: 3rem;
@@ -19,11 +22,24 @@
   }
 
   .search-location {
-    
+    padding: 0 15rem;
+    margin-top: 2rem;
+
+    select {
+      border: none;
+      outline: none;
+      padding: 1rem 1rem;
+      font-weight: 600;
+      font-size: 1.8rem;
+      width: 20rem;
+      min-width: 20rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
   }
 
   .specialty-list {
-    padding: 0 10rem;
+    padding: 0 15rem;
     .specialty-item {
       width: 100%;
       min-height: 30rem;
@@ -74,14 +90,15 @@
                   align-items: center;
                   justify-content: flex-start;
                   flex-wrap: wrap;
-                  gap: 2rem;
+                  gap: 1rem;
 
                   .time-item-vi {
-                    width: 14rem;
+                    width: 18rem;
                     min-width: 11rem;
                   }
 
                   .time-item-en {
+                    width: 18rem;
                     min-width: 17rem;
                   }
                 }

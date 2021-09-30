@@ -4,19 +4,20 @@ import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
 import MdEditor from 'react-markdown-editor-lite';
 import { LANGUAGES, CommonUtils } from '../../../utils';
-import { createNewSpecialty } from '../../../services/userService';
+import { createNewClinic } from '../../../services/userService';
 
-import './ManageSpecialty.scss';
+import './ManageClinic.scss';
 import { toast } from 'react-toastify';
 
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 
 
-class ManageSpecialty extends Component {
+class ManageClinic extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
+            address: '',
             imageBase64: '',
             descriptionHTML: '',
             descriptionMarkdown: '',
@@ -61,18 +62,19 @@ class ManageSpecialty extends Component {
         }
     }
 
-    handleSaveSpecialty = async () => {
-        let res = await createNewSpecialty(this.state);
+    handleSaveClinic = async () => {
+        let res = await createNewClinic(this.state);
         if(res && res.errCode === 0) {
-            toast.success('Create new Specialty success !');
+            toast.success('Create new Clinic success !');
             this.setState({
                 name: '',
+                address: '',
                 imageBase64: '',
                 descriptionHTML: '',
                 descriptionMarkdown: '',
             })
         } else{
-            toast.error('Create new Specialty failed !');
+            toast.error('Create new Clinic failed !');
         }
     }
     
@@ -80,12 +82,21 @@ class ManageSpecialty extends Component {
         return (
             <div className="manage-specialty">
                 <h2 className="title">
-                    Quản lý Chuyên khoa
+                    Quản lý phòng khám
                 </h2>
 
                 <div className="specialty-list row">
-                    <div className="col-6 form-group">
-                        <label>Tên chuyên khoa</label>
+                    <div className="col-5 form-group">
+                        <label>Địa chỉ phòng khám</label>
+                        <input 
+                            className="form-control" 
+                            type="text" 
+                            value={this.state.address} 
+                            onChange={(event) => this.handleOnChangeInput(event, 'address')}    
+                        />
+                    </div>
+                    <div className="col-4 form-group">
+                        <label>Tên phòng khám</label>
                         <input 
                             className="form-control" 
                             type="text" 
@@ -93,8 +104,8 @@ class ManageSpecialty extends Component {
                             onChange={(event) => this.handleOnChangeInput(event, 'name')}    
                         />
                     </div>
-                    <div className="col-6 form-group">
-                        <label>Ảnh chuyên khoa</label>
+                    <div className="col-3 form-group">
+                        <label>Ảnh phòng khám</label>
                         <input 
                             className="form-control-file" 
                             type="file" 
@@ -112,7 +123,7 @@ class ManageSpecialty extends Component {
                     <div className="col-12">
                         <button 
                             className="btn-add-specialty"
-                            onClick={() => this.handleSaveSpecialty()}
+                            onClick={() => this.handleSaveClinic()}
                         >
                             Lưu thông tin
                         </button>
@@ -137,4 +148,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageSpecialty);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageClinic);
