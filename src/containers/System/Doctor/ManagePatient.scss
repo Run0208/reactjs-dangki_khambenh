@@ -1,0 +1,31 @@
+.manage-patient {
+    font-size: 1.8rem;
+    padding: 0 15rem;
+    &-title{
+        color: rgb(0, 187, 0);
+        font-weight: bold;
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 3rem;
+    }
+
+    &-body {
+        .patient-list {
+            table {
+                width: 100%;
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+    
+                }
+                tr:nth-child(even) {
+                    background-color: #ebebeb;
+                }
+            }
+            
+          } 
+    }
+}
