@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
 import DatePicker from '../../../components/Input/DatePicker';
+import { getAllPatientForDoctor } from '../../../services/userService';
 
 import './ManagePatient.scss';
 
@@ -9,12 +11,16 @@ class ManagePatient extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: new Date()
+            currentDate: moment(new Date()).startOf('day').valueOf(),
+            dataPatient: []
         }
     }
 
     async componentDidMount() {
-
+        let { user } = this.props;
+        let { currentDate } = this.state;  
+        let formatedDate = new Date(currentDate).getTime();
+        this.getDataPatient(user, formatedDate);
     }
 
      async componentDidUpdate(prevProps, prevState) {
@@ -24,14 +30,42 @@ class ManagePatient extends Component {
         }
     }
 
+    getDataPatient = async (user, formatedDate) => {
+        let res = await getAllPatientForDoctor({
+            doctorId: user.id,
+            date: formatedDate
+        });
+        if(res && res.errCode === 0) {
+            this.setState({
+                dataPatient: res.data
+            })
+        }
+    }
+
     handleOnChangeDatePicker = (date) => {
         this.setState({
-            date: date[0]
+            currentDate: date[0]
+        }, () => {
+            let { user } = this.props;
+            let { currentDate } = this.state;  
+            let formatedDate = new Date(currentDate).getTime();
+            this.getDataPatient(user, formatedDate);
+
         })
+    }
+
+    handleConfirm = () => {
+        
+    }
+   
+    handleRemedy = () => {
+
     }
     
     render() {
-        return (
+        let { dataPatient } = this.state;
+        console.log('check prosp: ', this.props);
+            return (
             <div className="manage-patient">
                 <h2 className="manage-patient-title">Quản lý bệnh nhân khám bệnh</h2>
                 <div className="manage-patient-body">
@@ -49,40 +83,47 @@ class ManagePatient extends Component {
                             <table>
                                 <tbody>
                                     <tr>
-                                        <th>Company</th>
-                                        <th>Contact</th>
-                                        <th>Country</th>
+                                        <th>STT</th>
+                                        <th>Email</th>
+                                        <th>Full Name</th>
+                                        <th>address</th>
+                                        <th>Phone number</th>
+                                        <th>gender</th>
+                                        <th>Time</th>
+                                        <th>Actions</th>
                                     </tr>
-                                    <tr>
-                                        <td>Alfreds Futterkiste</td>
-                                        <td>Maria Anders</td>
-                                        <td>Germany</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro comercial Moctezuma</td>
-                                        <td>Francisco Chang</td>
-                                        <td>Mexico</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ernst Handel</td>
-                                        <td>Roland Mendel</td>
-                                        <td>Austria</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Island Trading</td>
-                                        <td>Helen Bennett</td>
-                                        <td>UK</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Laughing Bacchus Winecellars</td>
-                                        <td>Yoshi Tannamuri</td>
-                                        <td>Canada</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Magazzini Alimentari Riuniti</td>
-                                        <td>Giovanni Rovelli</td>
-                                        <td>Italy</td>
-                                    </tr>
+                                    {
+                                        dataPatient && dataPatient.length > 0 ?
+                                        dataPatient.map((item, index) => {
+                                            return (
+                                                <tr key={index}>
+                                                    <td>{index + 1}</td>
+                                                    <td>{item.patientIdData.email}</td>
+                                                    <td>{item.patientIdData.fullName}</td>
+                                                    <td>{item.patientIdData.address}</td>
+                                                    <td>{item.patientIdData.phoneNumber}</td>
+                                                    <td>{item.patientIdData.genderIdData.valueVi}</td>
+                                                    <td>{item.timeTypeDataPatient.valueVi}</td>
+                                                    <td>
+                                                        <button 
+                                                            className="btn btn-confirm"
+                                                            onClick={() => this.handleConfirm()}
+                                                        >
+                                                            Xác nhận
+                                                        </button>
+                                                        <button 
+                                                            className="btn btn-remedy"
+                                                            onClick={() => this.handleRemedy()}
+                                                        >
+                                                            Gửi hóa đơn
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        })
+                                        :
+                                        <td>No data...</td>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -96,6 +137,7 @@ class ManagePatient extends Component {
 const mapStateToProps = state => {
     return {
        language: state.app.language,
+       user: state.user.userInfo
     };
 };
 
