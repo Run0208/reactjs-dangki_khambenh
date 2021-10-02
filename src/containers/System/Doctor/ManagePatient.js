@@ -64,7 +64,6 @@ class ManagePatient extends Component {
     
     render() {
         let { dataPatient } = this.state;
-        console.log('check prosp: ', this.props);
             return (
             <div className="manage-patient">
                 <h2 className="manage-patient-title">Quản lý bệnh nhân khám bệnh</h2>
