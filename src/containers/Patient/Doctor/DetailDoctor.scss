@@ -34,26 +34,9 @@
             }
 
             .facebook {
-                display: flex;
-                align-content: space-between;
-                justify-content: start;
-                column-gap: 1rem;
-                margin-top: 2rem;
-
-                .btn {
-                    padding: 0.2rem 2rem;
-                    background-color: rgb(15,143,242);
-                    font-size: 1.5rem;
-                    color: white;
-                    font-weight: 600;
-                }
-
-                &-like {
-
-                } 
-
-                &-share {
-
+                margin-top: 1rem;
+                .like-share-plugin {
+                    margin: 1rem 2rem;
                 }
             }
         }
@@ -99,7 +82,7 @@
     }
 
     .comment-doctor {
-
+        padding: 2rem 10rem;
     }
 
 }

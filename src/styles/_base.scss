@@ -22,6 +22,17 @@ body, html {
     }
   }
 }
+
+div._loading_overlay_wrapper {
+  position: unset;
+
+  ._loading_overlay_overlay {
+      z-index: 100000;
+      font-size: 1.6rem;
+      color: rgb(0, 199, 0);
+  }
+}
+
 .content-container {
   .title {
     text-align: center;
