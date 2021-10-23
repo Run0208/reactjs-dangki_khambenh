@@ -8,7 +8,7 @@ import { getAllClinic } from '../../../services/userService';
 
 import '../HomePage.scss';
 
-class Facility extends Component {
+class Clinic extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,8 +41,9 @@ class Facility extends Component {
            <section className="section-container section-facility">
                <div className="section-content">
                     <div className="section-header">
-                        <h2>Facility</h2>
-                        <button>Tìm kiếm</button>
+                        <h2>
+                            <FormattedMessage id="home-page.clinic" />
+                        </h2>
                     </div>
                     <div    className="section-list">
                         <Slider {...this.props.settings}>
@@ -84,4 +85,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Facility));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Clinic));

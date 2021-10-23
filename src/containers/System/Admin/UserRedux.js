@@ -90,8 +90,6 @@ class UserRedux extends Component {
         }
     }
 
-
-
     handleOnChangeImage = async (event) => {
         let data = event.target.files;
         let file = data[0];
@@ -205,7 +203,7 @@ class UserRedux extends Component {
         let positions = this.state.positionArr;
         let language = this.props.language;
 
-        let { email, password, firstName, lastName, phoneNumber, address, gender, position, role, avatar } = this.state;
+        let { email, password, firstName, lastName, phoneNumber, address, gender, position, role } = this.state;
         return (
             <section className="section-user">
                 <div className="section-user-title">
@@ -405,7 +403,6 @@ class UserRedux extends Component {
                 </div>
                 
             </section>
-            
         )
     }
 

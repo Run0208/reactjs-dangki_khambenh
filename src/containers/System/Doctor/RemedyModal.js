@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import moment from 'moment';
+// import moment from 'moment';
 import { Modal } from 'reactstrap';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { CommonUtils } from '../../../utils';
 
 import './RemedyModal.scss';
@@ -56,7 +56,7 @@ class RemedyModal extends Component {
     }
     
     render() {
-        let { isOpenModal, closeRemedyModal, dataModal, sendRemedy } = this.props;
+        let { isOpenModal, closeRemedyModal } = this.props;
         return (
             <Modal 
                 isOpen={isOpenModal}

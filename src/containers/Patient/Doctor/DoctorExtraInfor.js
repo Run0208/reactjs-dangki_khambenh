@@ -30,7 +30,7 @@ class DoctorExtraInfor extends Component {
 
      async componentDidUpdate(prevProps, prevState) {
         let { language } = this.props;
-        if(this.props.language !== prevProps.language) {
+        if(language !== prevProps.language) {
 
         }
 

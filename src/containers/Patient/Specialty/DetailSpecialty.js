@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import HomeHeader from '../../HomePage/HomeHeader';
 import DoctorSchedule from '../Doctor/DoctorSchedule';
 import DoctorExtraInfor from '../Doctor/DoctorExtraInfor';
@@ -67,7 +67,7 @@ class DetailSpecialty extends Component {
 
      async componentDidUpdate(prevProps, prevState) {
         let { language } = this.props;
-        if(this.props.language !== prevProps.language) {
+        if(language !== prevProps.language) {
 
         }
     }

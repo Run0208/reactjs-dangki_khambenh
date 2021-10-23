@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { connect } from "react-redux";
 import { LANGUAGES } from '../../../utils';
-import localizattion from 'moment/locale/vi';
+// import localizattion from 'moment/locale/vi';
 import { FormattedMessage } from 'react-intl';
 import BookingModal from './Modal/BookingModal';
 import { getScheduleDoctorByDate } from '../../../services/userService';
@@ -93,9 +93,9 @@ class DoctorSchedule extends Component {
             let date = event.target.value;
             let res = await getScheduleDoctorByDate(doctorId, date);
 
-            let allTime = [];
+            // let allTime = [];
             if(res && res.errCode === 0) {
-                let allTime = res.data;
+                // let allTime = res.data;
 
                 this.setState({
                     allAvalableTime: res.data ? res.data : []

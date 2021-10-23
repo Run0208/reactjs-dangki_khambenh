@@ -10,7 +10,28 @@
     text-transform: uppercase;
   }
 
+  label {
+    font-weight: 600;
+  }
+
   .btn-add-specialty {
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: white;
+    background-color: rgb(0, 118, 173);
+    border: none;
+    outline: none;
+    float: right;
+    margin-top: 2rem;
+    transition: all 0.2s linear;
+
+    &:hover {
+      background-color: rgb(0, 78, 223);
+    }
+  }
+
+  .btn-edit-specialty {
     padding: 1rem 2rem;
     font-weight: bold;
     font-size: 1.6rem;

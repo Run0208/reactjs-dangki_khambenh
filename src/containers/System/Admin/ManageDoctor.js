@@ -283,6 +283,7 @@ class ManageDoctor extends Component {
 
     render() {
         let  { hasOldData } = this.state;
+        console.log(this.props.allRequireDoctorInfor);
         return (
             <div className="manage-doctor">
                 <h1 className="manage-doctor-title">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Slider from 'react-slick';
 import { connect } from 'react-redux';
 import { LANGUAGES } from '../../utils';
 import { withRouter } from 'react-router';
@@ -6,6 +7,10 @@ import { FormattedMessage } from 'react-intl';
 import { changeLanguageApp } from '../../store/actions';
 
 import './HomeHeader.scss';
+
+import slide1 from '../../assets/slider1.jpg';
+import slide2 from '../../assets/slider2.jpg';
+import slide3 from '../../assets/slider3.jpg';
 
 class HomeHeader extends Component {
 
@@ -20,13 +25,20 @@ class HomeHeader extends Component {
     }
 
     render() {
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 1000,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+
         let language = this.props.language;
         return (
             <React.Fragment>
                 <div className="header-menu">
                     <div className="menu-content">
                         <div className="menu-left">
-                            <i className="fas fa-bars"></i>
                             <div className="menu-left-logo" onClick={() => this.returnToHome()}></div>
                         </div>
                         <div className="menu-center">
@@ -63,87 +75,45 @@ class HomeHeader extends Component {
                 </div>
                 {
                     this.props.isShowBanner === true && 
-                    <div className="header-banner">
-                        <div className="banner-content">
-                            <h1 className="banner-name">
-                                <FormattedMessage id="banner.basic"/>
-                            </h1>
-                            <h2 className="banner-title">
-                            <FormattedMessage id="banner.title"/>
-                            </h2>
-                            <div className="banner-search">
-                                <i className="fas fa-search"></i>
-                                <input type="text" placeholder="Search..." />
+                    <Slider {...settings}>
+                        <div className="header-banner">
+                            <img className="image-banner" src={slide1} />
+                            <div className="banner-content">
+                                <h1 className="banner-name">
+                                    <FormattedMessage id="banner.basic"/>
+                                </h1>
+                                <h2 className="banner-title">
+                                    <FormattedMessage id="banner.title"/>
+                                </h2>
                             </div>
-                            <div className="banner-app">
-                                <div className="app-googleplay"></div>
-                                <div className="app-appstore"></div>
+                        </div> 
+                        {/* ----------------------------------------------------------------- */}
+                        <div className="header-banner">
+                            <img className="image-banner" src={slide2} />
+                            <div className="banner-content">
+                                <h1 className="banner-name">
+                                    <FormattedMessage id="banner.basic"/>
+                                </h1>
+                                <h2 className="banner-title">
+                                    <FormattedMessage id="banner.title"/>
+                                </h2>
                             </div>
-                        </div>
-                        <div className="banner-options">
-                            <div className="option-item">
-                                <div className="option-icon">
-                                    <i className="fas fa-hospital"></i>
-                                </div>
-                                <div className="option-title">
-                                    <span>
-                                        <FormattedMessage id="banner.examination1"/>
-                                    </span>
-                                </div>
+                        </div> 
+                        {/* ----------------------------------------------------------------- */}
+                        <div className="header-banner">
+                            <img className="image-banner" src={slide3} />
+                            <div className="banner-content">
+                                <h1 className="banner-name">
+                                    <FormattedMessage id="banner.basic"/>
+                                </h1>
+                                <h2 className="banner-title">
+                                    <FormattedMessage id="banner.title"/>
+                                </h2>
                             </div>
-                            <div className="option-item">
-                                <div className="option-icon">
-                                    <i className="fas fa-hospital"></i>
-                                </div>
-                                <div className="option-title">
-                                    <span>
-                                        <FormattedMessage id="banner.examination2"/>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-icon">
-                                    <i className="fas fa-hospital"></i>
-                                </div>
-                                <div className="option-title">
-                                    <span>
-                                        <FormattedMessage id="banner.examination3"/>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-icon">
-                                    <i className="fas fa-hospital"></i>
-                                </div>
-                                <div className="option-title">
-                                    <span>
-                                        <FormattedMessage id="banner.examination4"/>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-icon">
-                                    <i className="fas fa-hospital"></i>
-                                </div>
-                                <div className="option-title">
-                                    <span>
-                                        <FormattedMessage id="banner.examination5"/>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-icon">
-                                    <i className="fas fa-hospital"></i>
-                                </div>
-                                <div className="option-title">
-                                    <span>
-                                        <FormattedMessage id="banner.examination6"/>
-                                    </span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+                        </div> 
+                        {/* ----------------------------------------------------------------- */}
+                    </Slider>
+                     
                 }
             </React.Fragment>
             

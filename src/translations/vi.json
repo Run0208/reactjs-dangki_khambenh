@@ -21,17 +21,15 @@
     },
     "menu": {
         "admin": {
-            "manage-user": "người dùng",
+            "manage": "User System",
+            "crud": "User CRUD",
             "manage-doctor": "Quản lý bác sĩ",
             "manage-admin": "Quản lý admin",
-            "crud": "CRUD user",
-            "crud-redux": "CRUD Redux",
+            "manage-user": "Quản lý người dùng",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",
-            "manage-specialty": "Quản lý chuyên khoa",
-            "handbook": "Cẩm nang",
-            "manage-handbook": "Quản lý cẩm nang"
+            "manage-specialty": "Quản lý chuyên khoa"
         },
         "doctor": {
             "manage-schedule": "Quản lý kế hoạch khám bệnh",
@@ -56,7 +54,8 @@
     "home-page": {
         "see-more": "Xem thêm",
         "outstanding-doctor": "Bác sĩ nổi bật",
-        "specialty-popular": "Chuyên khoa phổ biến"
+        "specialty-popular": "Chuyên khoa phổ biến",
+        "clinic": "Phòng khám"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh",
@@ -107,6 +106,22 @@
             "clinic-name": "Tên phòng khám",
             "specialty": "Chọn chuyên khoa",
             "clinic": "Chọn phòng khám"
+        },
+        "manage-specialty": {
+            "specialty-title": "Quản lý chuyên khoa",
+            "specialty-name": "Tên chuyên khoa",
+            "specialty-image": "Ảnh chuyên khoa",
+            "save": "Lưu thông tin",
+            "edit": "Cập nhật thông tin"
+        },
+        "manage-clinic": {
+            "clinic-title": "Quản lý phòng khám",
+            "clinic-name": "Tên phòng khám",
+            "clinic-address": "Địa chỉ phòng khám",
+            "clinic-image": "Ảnh phòng khám",
+            "save": "Lưu thông tin",
+            "edit": "Cập nhật thông tin"
         }
+        
     }
 }

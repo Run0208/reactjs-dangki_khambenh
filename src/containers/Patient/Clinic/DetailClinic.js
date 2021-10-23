@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import HomeHeader from '../../HomePage/HomeHeader';
 import DoctorSchedule from '../Doctor/DoctorSchedule';
 import DoctorExtraInfor from '../Doctor/DoctorExtraInfor';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
-import { getAllCodeService, getAllDetailClinicById } from '../../../services/userService';
+import { /*getAllCodeService, */ getAllDetailClinicById } from '../../../services/userService';
 
 
 import './DetailClinic.scss';
 import _ from 'lodash';
-import { LANGUAGES } from '../../../utils';
+// import { LANGUAGES } from '../../../utils';
 
 class DetailClinic extends Component {
     constructor(props) {
@@ -51,14 +51,14 @@ class DetailClinic extends Component {
 
      async componentDidUpdate(prevProps, prevState) {
         let { language } = this.props;
-        if(this.props.language !== prevProps.language) {
+        if(language !== prevProps.language) {
 
         }
     }
     
     render() {
         let { arrDoctorId, dataDetailClinic } = this.state;
-        let { language } = this.props;
+        // let { language } = this.props;
         return (
             <div className="detail-specialty">
                 <HomeHeader />

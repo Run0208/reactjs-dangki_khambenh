@@ -41,7 +41,7 @@ class BookingModal extends Component {
 
      async componentDidUpdate(prevProps, prevState) {
         let { language } = this.props;
-        if(this.props.language !== prevProps.language) {
+        if(language !== prevProps.language) {
             this.setState({
                 genders: this.buildGenders(this.props.genders)                  
             })
@@ -69,7 +69,7 @@ class BookingModal extends Component {
         let result = [];             
         
         if(data && data.length > 0) {
-            data.map((item) => {
+            data.map((item, index) => {
                 let objoect = {};
                 objoect.label = language === LANGUAGES.VI ? item.valueVi : item.valueEn;
                 objoect.value = item.keyMap;

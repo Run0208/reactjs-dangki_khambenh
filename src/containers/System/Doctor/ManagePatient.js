@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { toast } from 'react-toastify';
 import RemedyModal from './RemedyModal';
 import { LANGUAGES } from '../../../utils';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import LoadingOverlay from 'react-loading-overlay';
 import DatePicker from '../../../components/Input/DatePicker';
 import { getAllPatientForDoctor, postSendRemedy } from '../../../services/userService';
@@ -29,7 +29,7 @@ class ManagePatient extends Component {
 
      async componentDidUpdate(prevProps, prevState) {
         let { language } = this.props;
-        if(this.props.language !== prevProps.language) {
+        if(language !== prevProps.language) {
 
         }
     }

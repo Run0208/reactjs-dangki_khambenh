@@ -1,19 +1,16 @@
 export const adminMenu = [
     { // Quản lý người dùng
-        name: 'menu.admin.manage-user', 
+        name: 'menu.admin.manage', 
         menus: [
-            {
+            {// Quản lý Users CRUD
                 name: 'menu.admin.crud', link: '/system/user-manage'
             },
-            {
-                name: 'menu.admin.crud-redux', link: '/system/user-redux'
+            {// Quản lý Users
+                name: 'menu.admin.manage-user', link: '/system/manage-user'
             },
-            {
+            {// Quản lý lên lịch khám bệnh của bác sĩ
                 name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
-                // subMenus: [
-                //     { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-                //     { name: 'menu.system.system-administrator.user-redux', link: '/system/user-redux' },
-                // ]
+
             },
             { // Quản lý kế hoạch khám bệnh của bác sĩ
                  name: 'menu.doctor.manage-schedule', link: '/doctor/manage-schedule'
@@ -37,14 +34,6 @@ export const adminMenu = [
         menus: [
             {
                 name: 'menu.admin.manage-specialty', link: '/system/manage-specialty'
-            }
-        ]
-    },
-    { // Quản lý cẩm nang
-        name: 'menu.admin.handbook', 
-        menus: [
-            {
-                name: 'menu.admin.manage-handbook', link: '/system/manage-handbook'
             }
         ]
     }

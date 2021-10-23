@@ -41,9 +41,6 @@ class Specialty extends Component {
                         <h2>
                             <FormattedMessage id="home-page.specialty-popular" />
                         </h2>
-                        <button>
-                            <FormattedMessage id="home-page.see-more" />
-                        </button>
                     </div>
                     <div className="section-list">
                         <Slider {...this.props.settings}>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import moment from 'moment';
+// import moment from 'moment';
 import Select from 'react-select';
 import { connect } from "react-redux";
 import { toast } from 'react-toastify';
 import { FormattedMessage } from 'react-intl';
 import * as actions from '../../../store/actions';
 import DatePicker from '../../../components/Input/DatePicker';
-import { CRUD_ACTIONS, LANGUAGES, dateFormat } from '../../../utils';
+import { LANGUAGES } from '../../../utils';
 import { saveBulkScheduleDoctor } from '../../../services/userService';
 
 import './ManageSchedule.scss';

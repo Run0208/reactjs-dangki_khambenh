@@ -71,16 +71,24 @@ const postVerifyEmail = (data) => {
 
 // ---------------- Specialty ----------------
 
-const createNewSpecialty = (data) => {
-    return axios.post('/api/create-new-specialty', data);
-}
-
 const getAllSpecialty = () => {
     return axios.get(`/api/get-all-specialty`);
 }
 
+const createNewSpecialty = (data) => {
+    return axios.post('/api/create-new-specialty', data);
+}
+
 const getAllDetailSpecialtyById= (data) => {
     return axios.get(`/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`);
+}
+
+const deleteSpecialtyService = (specialtyId) => {
+    return axios.delete('/api/delete-specialty', { data: { id: specialtyId }});
+}
+
+const editSpecialtyService = (inputData) => {
+    return axios.put('/api/edit-specialty', inputData);
 }
 
 // ---------------- Clinic ----------------
@@ -95,6 +103,14 @@ const getAllClinic = () => {
 
 const getAllDetailClinicById= (data) => {
     return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}`);
+}
+
+const deleteClinicService = (clinicId) => {
+    return axios.delete('/api/delete-clinic', { data: { id: clinicId }});
+}
+
+const editClinicService = (inputData) => {
+    return axios.put('/api/edit-clinic', inputData);
 }
 
 // --------------------------------
@@ -120,4 +136,8 @@ export {
     getAllDetailSpecialtyById, createNewClinic,
     getAllClinic, getAllDetailClinicById,
     getAllPatientForDoctor, postSendRemedy,
+    deleteSpecialtyService,
+    editSpecialtyService,
+    deleteClinicService,
+    editClinicService
 };

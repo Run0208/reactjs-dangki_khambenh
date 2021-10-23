@@ -21,17 +21,15 @@
     },
     "menu": {
         "admin": {
-            "manage-user": "User System",
+            "manage": "User System",
+            "crud": "User CRUD",
             "manage-doctor": "Doctor management",
             "manage-admin": "Admin Management",
-            "crud": "CRUD user",
-            "crud-redux": "CRUD Redux",
+            "manage-user": "Manage User",
             "clinic": "Clinic",
             "manage-clinic": "Clinic Management",
             "specialty": "Specialist",
-            "manage-specialty": "Specialized management",
-            "handbook": "Handbook",
-            "manage-handbook": "Manage handbook"
+            "manage-specialty": "Specialized management"
         },
         "doctor": {
             "manage-schedule": "Manage Doctor Schedule",
@@ -56,7 +54,8 @@
     "home-page": {
         "see-more": "See more",
         "outstanding-doctor": "Outstanding Doctor",
-        "specialty-popular": "Popular Specialty"
+        "specialty-popular": "Popular Specialty",
+        "clinic": "Clinic"
     },
     "manage-schedule": {
         "title": "Manage medical examination plan",
@@ -107,6 +106,22 @@
             "note": "Note",
             "specialty": "Choose specialty",
             "clinic": "Choose clinic"
+        },
+        "manage-specialty": {
+            "specialty-title": "Manage Specialty",
+            "specialty-name": "Name Specialty",
+            "specialty-image": "Specialty image",
+            "save": "Save infor",
+            "edit": "Update infor"
+        },
+        "manage-clinic": {
+            "clinic-title": "Manage Specialty",
+            "clinic-name": "Clinic Name",
+            "clinic-address": "Clinic Address",
+            "clinic-image": "Clinic image",
+            "save": "Save infor",
+            "edit": "Update infor"
         }
+        
     }
 }
