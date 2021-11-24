@@ -1,13 +1,15 @@
 .manage-schedule {
-
-    &-title h2 {
-        margin-top: 2rem;
-        font-weight: bold;
+    font-size: 1.8rem;
+    padding: 5rem 3rem;
+    .title {
         text-align: center;
-        color: green;
+        font-weight: bold;
+        color: rgb(0, 173, 0);
         font-size: 3rem;
         text-transform: uppercase;
-    }
+        margin-bottom: 2rem;
+    
+      }
 
     &-content {
         width: 100%;
@@ -20,7 +22,7 @@
         .row {
             width: 100%;
             height: auto;
-            padding: 2rem 15rem;
+            
             .doctor-option {
                 .doctor-select {
                     font-size: 1.6rem;

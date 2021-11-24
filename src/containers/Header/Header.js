@@ -6,9 +6,10 @@ import Navigator from '../../components/Navigator';
 import { adminMenu, doctorMenu } from './menuApp';
 import { LANGUAGES, USER_ROLE } from '../../utils';
 import { FormattedMessage } from 'react-intl';
+import _ from 'lodash';
+import logo from '../../assets/logo.svg'
 
 import './Header.scss';
-import _ from 'lodash';
 
 class Header extends Component {
     constructor(props) {
@@ -44,16 +45,17 @@ class Header extends Component {
         const { processLogout, language, userInfo } = this.props;
         return (
             <div className="header-container">
-                {/* thanh navigator */}
-                <div className="header-tabs-container">
-                    <Navigator menus={this.state.menuApp} />
+
+                <div className="header-container-logo">
+                    <img src={logo} />
                 </div>
 
                 <div className="languages">
-                    <span className="welcome">
+                    <div className="welcome">
                         <FormattedMessage id="header.welcome"/>
                         {userInfo && userInfo.firstName ? userInfo.firstName : ''}
-                    </span>
+                    </div>
+                    <span>Language: </span>
                     <span 
                         className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}
                         onClick={() => this.handleChaneLanguage(LANGUAGES.VI)}
@@ -66,13 +68,24 @@ class Header extends Component {
                     >
                         EN
                     </span>
-                    {/* nút logout */}
-                    <div className="btn btn-logout" onClick={processLogout} title="Logout">
-                        <i className="fas fa-sign-out-alt"></i>
-                    </div>
+                    
                 </div>
 
+                {/* thanh navigator */}
+                <div className="header-tabs-container">
+                    <Navigator menus={this.state.menuApp} />
+                </div>
 
+                
+
+                {/* nút logout */}
+                <div className="logout" >
+                    <button className="btn-logout" onClick={processLogout} title="Logout">
+                        Log out
+                        <span> </span> 
+                        <i className="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
             </div>
         );
     }

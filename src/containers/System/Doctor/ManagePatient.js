@@ -6,8 +6,15 @@ import RemedyModal from './RemedyModal';
 import { LANGUAGES } from '../../../utils';
 // import { FormattedMessage } from 'react-intl';
 import LoadingOverlay from 'react-loading-overlay';
+import RemedyModalOnlineClinic from './RemedyModalOnlineClinic';
+import RemedyModalBlocked from './RemedyModalBlocked';
 import DatePicker from '../../../components/Input/DatePicker';
-import { getAllPatientForDoctor, postSendRemedy } from '../../../services/userService';
+import { 
+    getAllPatientForDoctor, 
+    postSendRemedy, 
+    postSendRemedyOnlineClinic,
+    postSendBlockedNotification
+} from '../../../services/userService';
 
 import './ManagePatient.scss';
 
@@ -18,6 +25,8 @@ class ManagePatient extends Component {
             currentDate: moment(new Date()).startOf('day').valueOf(),
             dataPatient: [],
             isOpenModal: false,
+            isOpenModalOnlineClinic: false,
+            isOpenModalBlocked: false,
             dataModal: {},
             isLoading: false
         }
@@ -73,9 +82,43 @@ class ManagePatient extends Component {
         })
     }
 
+    handleOnlineClinic = (item) => {
+        let data = {
+            doctorId: item.doctorId,
+            patientId: item.patientId,
+            email: item.patientIdData.email,
+            fullName: item.patientIdData.fullName,
+            phoneNumber: item.patientIdData.phoneNumber,
+            address: item.patientIdData.address,
+            timeType: item.timeType
+        }
+        this.setState({
+            isOpenModalOnlineClinic: true,
+            dataModal: data
+        })
+    }
+
+    handleBlocked = (item) => {
+        let data = {
+            doctorId: item.doctorId,
+            patientId: item.patientId,
+            email: item.patientIdData.email,
+            fullName: item.patientIdData.fullName,
+            phoneNumber: item.patientIdData.phoneNumber,
+            address: item.patientIdData.address,
+            timeType: item.timeType
+        }
+        this.setState({
+            isOpenModalBlocked: true,
+            dataModal: data
+        })
+    }
+
     closeRemedyModal = () => {
         this.setState({
             isOpenModal: false,
+            isOpenModalOnlineClinic: false,
+            isOpenModalBlocked: false,
             dataModal: {}
         })
     }
@@ -108,13 +151,77 @@ class ManagePatient extends Component {
                 isLoading: false
             })
             toast.error('Something wrong... !');
-            console.log('check error: ', res);
+            console.log('Check error: ', res);
+        }
+    }
+
+    sendRemedyOnlineClinic = async (data) => {
+        let { dataModal } = this.state;
+        this.setState({
+            isOpenModalOnlineClinic: true
+        })
+        let res = await postSendRemedyOnlineClinic({
+            email: data.email,
+            linkRoom: data.linkRoom,
+            fullName: dataModal.fullName,
+            phoneNumber: dataModal.phoneNumber,
+            address: dataModal.address,
+            doctorId: dataModal.doctorId,
+            patientId: dataModal.patientId,
+            timeType: dataModal.timeType,
+            language: this.props.language
+        })
+        if(res && res.errCode === 0) {
+            this.setState({
+                isLoading: false
+            })
+            toast.success('Send Online clinic success !');
+            this.closeRemedyModal();
+            await this.getDataPatient();
+        } else {
+            this.setState({
+                isLoading: false
+            })
+            toast.error('Something wrong... !');
+            console.log('Check error: ', res);
+        }
+    }
+
+    sendBlockedNotification = async (data) => {
+        let { dataModal } = this.state;
+        this.setState({
+            isOpenModalBlocked: true
+        })
+        let res = await postSendBlockedNotification({
+            email: data.email,
+            linkRoom: data.linkRoom,
+            fullName: dataModal.fullName,
+            phoneNumber: dataModal.phoneNumber,
+            address: dataModal.address,
+            doctorId: dataModal.doctorId,
+            patientId: dataModal.patientId,
+            timeType: dataModal.timeType,
+            language: this.props.language
+        })
+        if(res && res.errCode === 0) {
+            this.setState({
+                isLoading: false
+            })
+            toast.success('Send Blocked Notification success !');
+            this.closeRemedyModal();
+            await this.getDataPatient();
+        } else {
+            this.setState({
+                isLoading: false
+            })
+            toast.error('Something wrong... !');
+            console.log('Check error: ', res);
         }
     }
 
     
     render() {
-        let { dataPatient, isOpenModal, dataModal } = this.state;
+        let { dataPatient, isOpenModal, isOpenModalOnlineClinic, isOpenModalBlocked, dataModal } = this.state;
         let { language } = this.props;
         return (
             <>
@@ -165,13 +272,27 @@ class ManagePatient extends Component {
                                                             <td>{item.patientIdData.phoneNumber}</td>
                                                             <td>{gender}</td>
                                                             <td>{time}</td>
-                                                            <td>
-                                                                <button 
-                                                                    className="btn btn-confirm"
-                                                                    onClick={() => this.handleConfirm(item)}
-                                                                >
-                                                                    Xác nhận
-                                                                </button>
+                                                            <td className="actions">
+                                                                <div className="btn-container">
+                                                                    <button
+                                                                        className="btn btn-confirm"
+                                                                        onClick={() => this.handleConfirm(item)}
+                                                                    >
+                                                                        Confirm
+                                                                    </button>
+                                                                    <button
+                                                                        className="btn btn-link-online"
+                                                                        onClick={() => this.handleOnlineClinic(item)}
+                                                                    >
+                                                                        Meeting
+                                                                    </button>
+                                                                    <button
+                                                                        className="btn btn-block"
+                                                                        onClick={() => this.handleBlocked(item)}
+                                                                    >
+                                                                        Block
+                                                                    </button>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     )
@@ -191,6 +312,18 @@ class ManagePatient extends Component {
                         dataModal={dataModal}
                         sendRemedy={this.sendRemedy}
                         isOpenModal={isOpenModal}
+                        closeRemedyModal={this.closeRemedyModal}
+                    />
+                    <RemedyModalOnlineClinic 
+                        dataModal={dataModal}
+                        sendRemedyOnlineClinic={this.sendRemedyOnlineClinic}
+                        isOpenModalOnlineClinic={isOpenModalOnlineClinic}
+                        closeRemedyModal={this.closeRemedyModal}
+                    />
+                    <RemedyModalBlocked 
+                        dataModal={dataModal}
+                        sendBlockedNotification={this.sendBlockedNotification}
+                        isOpenModalBlocked={isOpenModalBlocked}
                         closeRemedyModal={this.closeRemedyModal}
                     />
                 </LoadingOverlay>

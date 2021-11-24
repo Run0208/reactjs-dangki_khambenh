@@ -98,7 +98,7 @@ class ManageDoctor extends Component {
         let { language } = this.props;
         if(data && data.length > 0) {
             if(type === 'USERS') {
-                data.map((item, index) =>{
+                data.map((item) =>{
                     let object = {};
                     let labelVi = `${item.lastName} ${item.firstName}`; 
                     let labelEn = `${item.firstName} ${item.lastName}`;
@@ -108,7 +108,7 @@ class ManageDoctor extends Component {
                 });
             }
             if(type === 'PRICE') {
-                data.map((item, index) =>{
+                data.map((item) =>{
                     let object = {};
                     let labelVi = `${item.valueVi} VND`; 
                     let labelEn = `${item.valueEn} USD`;
@@ -118,7 +118,7 @@ class ManageDoctor extends Component {
                 });
             }
             if(type === 'PAYMENT' || type === 'PROVINCE') {
-                data.map((item, index) =>{
+                data.map((item) =>{
                     let object = {};
                     let labelVi = `${item.valueVi}`; 
                     let labelEn = `${item.valueEn}`;
@@ -128,7 +128,7 @@ class ManageDoctor extends Component {
                 });
             }
             if(type === 'SPECIALTY') {
-                data.map((item, index) =>{
+                data.map((item) =>{
                     let object = {};
                     object.label = item.name;
                     object.value = item.id;
@@ -136,7 +136,7 @@ class ManageDoctor extends Component {
                 });
             }
             if(type === 'CLINIC') {
-                data.map((item, index) =>{
+                data.map((item) =>{
                     let object = {};
                     object.label = item.name;
                     object.value = item.id;
@@ -286,9 +286,9 @@ class ManageDoctor extends Component {
         console.log(this.props.allRequireDoctorInfor);
         return (
             <div className="manage-doctor">
-                <h1 className="manage-doctor-title">
+                <h2 className="title">
                     <FormattedMessage id="admin.manage-doctor.title" />
-                </h1>
+                </h2>
                 <div className="manage-doctor-more-infor">
                     <div className="more-infor-left">
                         <div className="choose-doctor form-group">

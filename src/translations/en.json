@@ -1,5 +1,4 @@
 {
-
     "header": {
         "specialty-menu": "Specialty",
         "facility-menu": "Health facilities",
@@ -22,6 +21,7 @@
     "menu": {
         "admin": {
             "manage": "User System",
+            "dashboard": "Dashboard",
             "crud": "User CRUD",
             "manage-doctor": "Doctor management",
             "manage-admin": "Admin Management",

@@ -10,14 +10,9 @@ class MenuGroup extends Component {
     render() {
         const { name, children } = this.props;
         return (
-            <li className="menu-group">
-                <div className="menu-group-name">
-                    <FormattedMessage id={name} />
-                </div>
-                <ul className="menu-list list-unstyled">
+            <div className="menu-list">
                     {children}
-                </ul>
-            </li>
+            </div>
         );
     }
 }

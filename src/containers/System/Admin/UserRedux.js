@@ -177,7 +177,7 @@ class UserRedux extends Component {
     handleEditUserFromParent = (user) => {
         let imageBase64 = '';
         if(user.image) {
-            imageBase64 = new Buffer(user.image, 'base64').toString('binary');
+            imageBase64 = Buffer.from(user.image, 'base64').toString('binary');
         }
 
         this.setState({
@@ -206,9 +206,9 @@ class UserRedux extends Component {
         let { email, password, firstName, lastName, phoneNumber, address, gender, position, role } = this.state;
         return (
             <section className="section-user">
-                <div className="section-user-title">
+                <h2 className="title">
                     Create User 
-                </div>
+                </h2>
                 <div className="section-user-content">
                     <div className="container">
                         <div className="row">

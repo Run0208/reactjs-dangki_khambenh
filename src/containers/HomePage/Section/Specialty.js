@@ -42,30 +42,28 @@ class Specialty extends Component {
                             <FormattedMessage id="home-page.specialty-popular" />
                         </h2>
                     </div>
-                    <div className="section-list">
-                        <Slider {...this.props.settings}>
-                            {
-                                dataSpecialty && dataSpecialty.length > 0 &&
-                                dataSpecialty.map((item, index) => {
-                                    return (
+                    <Slider {...this.props.settings} className="section-list">
+                        {
+                            dataSpecialty && dataSpecialty.length > 0 &&
+                            dataSpecialty.map((item, index) => {
+                                return (
+                                    <div 
+                                        className="section-item section-item-specialty" 
+                                        key={index}
+                                        onClick={() => this.handleViewDetailSpecialty(item)}
+                                    >
                                         <div 
-                                            className="section-item section-item-specialty" 
-                                            key={index}
-                                            onClick={() => this.handleViewDetailSpecialty(item)}
-                                        >
-                                            <div 
-                                                className="section-image specialty-image"
-                                                style={{backgroundImage: `url(${item.image})`}}
-                                            ></div>
-                                            <span>{item.name}</span>
-                                        </div>
-                                    );
-                                })
-                            }
-                            
-                            
-                        </Slider>
-                    </div>
+                                            className="section-image specialty-image"
+                                            style={{backgroundImage: `url(${item.image})`}}
+                                        ></div>
+                                        <span>{item.name}</span>
+                                    </div>
+                                );
+                            })
+                        }
+                        
+                        
+                    </Slider>
                </div>
            </section>
         );

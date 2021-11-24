@@ -5,7 +5,6 @@ import HomeHeader from './HomeHeader';
 import Specialty from './Section/Specialty';
 import Clinic from './Section/Clinic';
 import OutStandingDoctor from './Section/OutStandingDoctor';
-import HandBook from './Section/HandBook';
 import About from './Section/About';
 import Footer from './Section/Footer';
 import CopyRight from './Section/CopyRight';
@@ -17,6 +16,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 class HomePage extends Component {
+
+
     render() {
 
         let settings = {
@@ -26,14 +27,7 @@ class HomePage extends Component {
             slidesToShow: 4,
             slidesToScroll: 3
         };
-
-        let handbooks = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 2,
-            slidesToScroll: 1
-        };
+        
 
         return (
             <div>
@@ -41,7 +35,6 @@ class HomePage extends Component {
                 <Specialty settings={settings} /> 
                 <Clinic settings={settings} />
                 <OutStandingDoctor settings={settings} />
-                <HandBook settings={handbooks} />
                 <About />
                 <Footer />
                 <CopyRight />

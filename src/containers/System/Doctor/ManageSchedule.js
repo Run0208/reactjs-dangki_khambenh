@@ -60,7 +60,7 @@ class ManageSchedule extends Component {
         let result = [];
         let { language } = this.props;
         if(data && data.length > 0) {
-            data.map((item, index) =>{
+            data.map((item) =>{
                 let object = {};
                 let labelVi = `${item.lastName} ${item.firstName}`
                 let labelEn = `${item.firstName} ${item.lastName} `
@@ -117,7 +117,7 @@ class ManageSchedule extends Component {
         if(rangeTime && rangeTime.length > 0) {
             let selectedTime = rangeTime.filter(item => item.isActive === true);
             if(selectedTime && selectedTime.length > 0){
-                selectedTime.map((time, index) => {
+                selectedTime.map((time) => {
                     let object = {}
                     object.doctorId = selectedDoctor.value;
                     object.date = formatedDate;
@@ -149,11 +149,9 @@ class ManageSchedule extends Component {
         let yesterday = new Date(new Date().setDate(new Date().getDate()-1));
         return (
             <div className="manage-schedule">
-                <div className="manage-schedule-title">
-                    <h2>
+                <h2 className="title">
                         <FormattedMessage id="manage-schedule.title" />
-                    </h2>
-                </div>
+                </h2>
                 <div className="manage-schedule-content">
                     <div className="row">
                         <div className="col-4  doctor-option">

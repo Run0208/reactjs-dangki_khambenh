@@ -111,7 +111,7 @@ class ManageSpecialty extends Component {
     handleEditSpecialty = (specialty) => {
         let imageBase64 = '';
         if(specialty.image) {
-            imageBase64 = new Buffer(specialty.image, 'base64').toString('binary');
+            imageBase64 = Buffer.from(specialty.image, 'base64').toString('binary');
         }
 
         this.setState({

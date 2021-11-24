@@ -123,6 +123,14 @@ const postSendRemedy= (data) => {
     return axios.post('/api/send-remedy', data);
 }
 
+const postSendRemedyOnlineClinic= (data) => {
+    return axios.post('/api/send-online-class-room', data);
+}
+
+const postSendBlockedNotification= (data) => {
+    return axios.post('/api/send-blocked-notification', data);
+}
+
 export { 
     handleLoginApi, getAllUsers, 
     createNewUserService, deleteUserService,
@@ -136,8 +144,10 @@ export {
     getAllDetailSpecialtyById, createNewClinic,
     getAllClinic, getAllDetailClinicById,
     getAllPatientForDoctor, postSendRemedy,
+    postSendRemedyOnlineClinic,
     deleteSpecialtyService,
     editSpecialtyService,
     deleteClinicService,
-    editClinicService
+    editClinicService,
+    postSendBlockedNotification
 };

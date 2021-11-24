@@ -117,7 +117,7 @@ class ManageClinic extends Component {
     handleEditClinic = (clinic) => {
         let imageBase64 = '';
         if(clinic.image) {
-            imageBase64 = new Buffer(clinic.image, 'base64').toString('binary');
+            imageBase64 = Buffer.from(clinic.image, 'base64').toString('binary');
         }
 
         this.setState({

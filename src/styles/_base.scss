@@ -29,6 +29,15 @@ div._loading_overlay_wrapper {
 }
 
 .content-container {
+  display: flex;
+  .header-container {
+    width: 22%;
+  }
+
+  .system-container {
+    width: 78%;
+  }
+
   .title {
     text-align: center;
     text-transform: uppercase;

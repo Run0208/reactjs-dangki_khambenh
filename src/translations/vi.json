@@ -22,6 +22,7 @@
     "menu": {
         "admin": {
             "manage": "User System",
+            "dashboard": "Dashboard",
             "crud": "User CRUD",
             "manage-doctor": "Quản lý bác sĩ",
             "manage-admin": "Quản lý admin",

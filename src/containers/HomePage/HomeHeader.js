@@ -77,7 +77,7 @@ class HomeHeader extends Component {
                     this.props.isShowBanner === true && 
                     <Slider {...settings}>
                         <div className="header-banner">
-                            <img className="image-banner" src={slide1} />
+                            <img className="image-banner" src={slide1} alt="" />
                             <div className="banner-content">
                                 <h1 className="banner-name">
                                     <FormattedMessage id="banner.basic"/>
@@ -89,7 +89,7 @@ class HomeHeader extends Component {
                         </div> 
                         {/* ----------------------------------------------------------------- */}
                         <div className="header-banner">
-                            <img className="image-banner" src={slide2} />
+                            <img className="image-banner" src={slide2} alt="" />
                             <div className="banner-content">
                                 <h1 className="banner-name">
                                     <FormattedMessage id="banner.basic"/>
@@ -101,7 +101,7 @@ class HomeHeader extends Component {
                         </div> 
                         {/* ----------------------------------------------------------------- */}
                         <div className="header-banner">
-                            <img className="image-banner" src={slide3} />
+                            <img className="image-banner" src={slide3} alt="" />
                             <div className="banner-content">
                                 <h1 className="banner-name">
                                     <FormattedMessage id="banner.basic"/>
