@@ -77,7 +77,9 @@
     .logout {
         padding: 0 2rem;
         margin-top: 2rem;
+
         .btn-logout {
+            position: relative;
             width: 100%;
             color: $common-text-color;
             line-height: 40px;
@@ -85,19 +87,24 @@
             border: none;
             outline: none;
             background-color: darken($colormain, 5);
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
 
             &:hover {
+                color: black;
+                background: #1ca0f8;
             }
             i {
                 font-size: $base-size + 1px;
+                position: absolute;
+                top: 50%;
+                right: 2rem;
+                transform: translateY(-50%);
+                
             }
         }
     }
-    .btn-logout {
-        
-        padding: 0 10px;
-        
-        
-    }
+
     
 }

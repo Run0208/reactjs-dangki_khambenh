@@ -1,19 +1,21 @@
 
 .manage-patient {
-    font-size: 1.6rem;
-    padding: 0 10rem;
+    font-size: 1.8rem;
+    padding: 5rem 3rem;
 
+    
+    .title{
+        text-align: center;
+        font-weight: bold;
+        color: rgb(0, 173, 0);
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+    
     .doctor-date{
         font-size: 1.6rem;
         outline: none;
-    }
-
-    &-title{
-        color: rgb(0, 187, 0);
-        font-weight: bold;
-        text-align: center;
-        margin-top: 2rem;
-        font-size: 3rem;
     }
 
     &-body {

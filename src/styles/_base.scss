@@ -33,9 +33,11 @@ div._loading_overlay_wrapper {
   .header-container {
     width: 22%;
   }
-
+  
   .system-container {
     width: 78%;
+    height: 100vh;
+    overflow-y: scroll;
   }
 
   .title {
@@ -52,3 +54,8 @@ div._loading_overlay_wrapper {
     -webkit-box-shadow: 2px 2px 4px 0 $box-shadow-color;
   }
 }
+
+.home-container {
+  display: block;
+}
+

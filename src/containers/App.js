@@ -49,21 +49,24 @@ class App extends Component {
                 <Router history={history}>
                     <div className="main-container">
                         <CustomScrollbars style={{height: '100vh', width: '100%'}}>
-                            <div className="content-container">
                                 <Switch>
+                                    <div className="content-container">
                                     <Route path={path.HOME} exact component={(Home)} />
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                     <Route path={path.DOCTOR} component={userIsAuthenticated(Doctor)} />
-
+                                    </div>
+                                </Switch>                            
+                                <Switch>
+                                    <div  className="home-container">
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
 
                                     <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
-                                </Switch>                            
-                            </div>
+                                    </div>
+                                </Switch>
                         </CustomScrollbars>
 
                         <ToastContainer

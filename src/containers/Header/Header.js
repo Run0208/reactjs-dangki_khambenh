@@ -73,16 +73,19 @@ class Header extends Component {
 
                 {/* thanh navigator */}
                 <div className="header-tabs-container">
-                    <Navigator menus={this.state.menuApp} />
+                    <Navigator menus={this.state.menuApp}/>
                 </div>
 
                 
 
                 {/* nút logout */}
                 <div className="logout" >
-                    <button className="btn-logout" onClick={processLogout} title="Logout">
+                    <button 
+                        className="btn-logout" 
+                        onClick={processLogout} 
+                        title="Logout"
+                    >
                         Log out
-                        <span> </span> 
                         <i className="fas fa-sign-out-alt"></i>
                     </button>
                 </div>

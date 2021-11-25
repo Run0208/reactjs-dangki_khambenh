@@ -231,7 +231,10 @@ class ManagePatient extends Component {
                 text='Loading...'
                 >
                     <div className="manage-patient">
-                        <h2 className="manage-patient-title">Quản lý bệnh nhân khám bệnh</h2>
+                        <h2 className="title">
+                            Quản lý bệnh nhân khám bệnh
+                        </h2>
+
                         <div className="manage-patient-body">
                             <div className="row">
                                 <div className="col-4 form-group">

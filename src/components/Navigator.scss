@@ -18,11 +18,12 @@
         cursor: pointer;
         
         .menu-link {
-          display: inline-block;
+          display: block;
           color: black;
           width: 100% !important;
           text-decoration: none;
           font-weight: 600;
+          border-bottom: 1px solid #ccc;
           
           &:hover {
 

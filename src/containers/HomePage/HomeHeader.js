@@ -35,6 +35,7 @@ class HomeHeader extends Component {
 
         let language = this.props.language;
         return (
+
             <React.Fragment>
                 <div className="header-menu">
                     <div className="menu-content">
