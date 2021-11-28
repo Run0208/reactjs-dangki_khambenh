@@ -115,6 +115,10 @@ const editClinicService = (inputData) => {
 
 // --------------------------------
 
+const getAllPatient = () => {
+    return axios.get(`/api/get-all-patient`);
+}
+
 const getAllPatientForDoctor= (data) => {
     return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`);
 }
@@ -149,5 +153,6 @@ export {
     editSpecialtyService,
     deleteClinicService,
     editClinicService,
-    postSendBlockedNotification
+    postSendBlockedNotification,
+    getAllPatient
 };

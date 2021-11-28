@@ -1,0 +1,48 @@
+.status-card {
+    padding: 1rem;
+    background-color: #3498db;
+    display: flex;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+    .item-infor, .item-count {
+        padding: 3rem 1.5rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .item-infor {
+        border-radius: inherit;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        background-color: #70a1ff;
+        &__icon {
+            
+            i {
+                font-size: 3rem;
+            }
+        }
+        
+        &__name h4{
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+    }
+
+
+    .item-count span {
+        font-size: 3.5rem;
+        font-weight: 600;
+    }
+
+    
+
+    
+}
+
+
+
+
