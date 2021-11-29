@@ -1,18 +1,24 @@
 import { Component } from 'react';
 import './DashBoard.scss';
-import StatusCard from './StatusCard';
-import statusCard from '../../../assets/JsonData/dashboard.json'
 import Chart from './Chart';
-import { getAllClinic, getAllDoctors, getAllSpecialty, getAllPatient } from '../../../services/userService';
+import StatusCard from './StatusCard';
+import statusCard from '../../../assets/JsonData/dashboard.json';
+import { 
+    getAllClinic, 
+    getAllDoctors, 
+    getAllSpecialty, 
+    getAllPatient 
+} from '../../../services/userService';
 
 class DashBoard extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            dataClinics: [],
             dataDoctors: [],
-            dataSpecialties: [],
+            dataClinics: [],
             dataPatients: [],
+            dataSpecialties: [],
         }
     }
 
@@ -44,24 +50,23 @@ class DashBoard extends Component {
     }
     
     render() {
-        
         let { dataClinics, dataDoctors, dataSpecialties, dataPatients } = this.state;
+
         const countClinic = dataClinics.length;
         const countDoctor = dataDoctors.length;
         const countSpecialty = dataSpecialties.length;
         const countPatient = dataPatients.length;
 
         const array = [ 
-            countDoctor, countPatient, countClinic, countSpecialty
+            countDoctor, 
+            countPatient, 
+            countClinic, 
+            countSpecialty
         ]
 
         for(let i = 0; i < statusCard.length; i++) {
             statusCard[i].count = array[i]
         }
-
-
-        // console.log('Array: ', array);
-        // console.log('Status: ', statusCard);
         
         return (
             <div className="manage-dashboard">
@@ -80,11 +85,15 @@ class DashBoard extends Component {
                         }
                     </div>
                     <div className="dashboard-top-right">
-                        <Chart />
+                       
                     </div>
                     
                 </div>
-                <div className="dashboard-bottom"></div>
+                <div className="dashboard-bottom">
+                    <Chart 
+                        listData={dataDoctors}
+                    />
+                </div>
             </div>
         );
     }

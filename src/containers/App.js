@@ -13,6 +13,7 @@ import Home from '../routes/Home';
 import System from '../routes/System';
 import Doctor from '../routes/Doctor';
 import HomePage from './HomePage/HomePage.js';
+import ListDoctor from './HomePage/Doctor/ListDoctor';
 import VerifyEmail from './Patient/VerifyEmail';
 import DetailDoctor from './Patient/Doctor/DetailDoctor';
 import DetailClinic from './Patient/Clinic/DetailClinic';
@@ -60,6 +61,7 @@ class App extends Component {
                                 <Switch>
                                     <div  className="home-container">
                                     <Route path={path.HOMEPAGE} component={HomePage} />
+                                    <Route path={path.LIST_DOCTOR} component={ListDoctor} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />

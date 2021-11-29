@@ -24,6 +24,12 @@ class HomeHeader extends Component {
         }
     }
 
+    handleListDoctor = (doctor) => {
+        if(this.props.history) {
+            this.props.history.push(`/list-doctor`)
+        }
+    }
+
     render() {
         const settings = {
             dots: true,
@@ -51,7 +57,9 @@ class HomeHeader extends Component {
                                     <FormattedMessage id="header.facility-menu"/>
                                 </li>
                                 <li className="menu-list-item">
-                                    <FormattedMessage id="header.doctor-menu"/>
+                                    <div onClick={() => this.handleListDoctor()}>
+                                        <FormattedMessage id="header.doctor-menu"/> 
+                                    </div>
                                 </li>
                                 <li className="menu-list-item">
                                     <FormattedMessage id="header.package-menu"/>

@@ -4,7 +4,7 @@ import HomeHeader from './HomeHeader';
 
 import Specialty from './Section/Specialty';
 import Clinic from './Section/Clinic';
-import OutStandingDoctor from './Section/OutStandingDoctor';
+import Doctor from './Section/Doctor';
 import About from './Section/About';
 import Footer from './Section/Footer';
 import CopyRight from './Section/CopyRight';
@@ -34,7 +34,7 @@ class HomePage extends Component {
                 <HomeHeader isShowBanner={true} />
                 <Specialty settings={settings} /> 
                 <Clinic settings={settings} />
-                <OutStandingDoctor settings={settings} />
+                <Doctor settings={settings} />
                 <About />
                 <Footer />
                 <CopyRight />

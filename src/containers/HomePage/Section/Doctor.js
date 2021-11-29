@@ -8,7 +8,7 @@ import * as actions from '../../../store/actions';
 
 import '../HomePage.scss';
 
-class Specialty extends Component {
+class Doctor extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -96,4 +96,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Specialty));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Doctor));
