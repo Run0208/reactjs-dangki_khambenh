@@ -115,7 +115,6 @@
                 position: relative;
                 transition: all 0.25s linear;
                 z-index: 999;
-
                 &::before {
                     content: "";
                     position: absolute;
@@ -128,7 +127,9 @@
                     transition: all 0.25s linear;
                     z-index: -1;
                 }
-                
+                &hover::before {
+                    width: 100%;
+                }
             }
 
             .login-forgot-password {
