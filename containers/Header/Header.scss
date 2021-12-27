@@ -1,0 +1,105 @@
+@import "../../styles/common.scss";
+
+.header-container {
+    width: 30rem;
+    height: 100vh;
+    z-index: 99;
+    display: block;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    position: relative;
+    background-color: #edf2fb;
+    align-items: center;
+    box-sizing: border-box;
+
+    &-logo {
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+            width: 25rem;
+            height: auto;
+        }
+    }
+
+    .languages {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+
+        .welcome {
+            margin-right: 2rem;
+            font-size: 1.4rem;
+            font-weight: 300;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: black;
+            margin-bottom: 1rem;
+        }
+
+        .language-vi {
+            cursor: pointer;
+            opacity: 0.8;
+            color: rgb(255, 193, 79);
+            &.active {
+                color: orange;
+                opacity: 1;
+            }
+
+            &:hover {
+                color: orange;
+            }
+        }
+
+        .language-en {
+            margin: 0 1rem;
+            cursor: pointer;
+            opacity: 0.8;
+            color: rgb(108, 172, 255);
+            &.active {
+                color: rgb(25, 125, 255);
+                opacity: 1;
+            }
+
+            &:hover {
+                color: rgb(2, 86, 196);
+            }
+        }
+    }
+    .logout {
+        padding: 0 2rem;
+        margin-top: 2rem;
+
+        .btn-logout {
+            position: relative;
+            width: 100%;
+            color: $common-text-color;
+            line-height: 40px;
+            height: 40px;
+            border: none;
+            outline: none;
+            background-color: darken($colormain, 5);
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            &:hover {
+                color: black;
+                background: #1ca0f8;
+            }
+            i {
+                font-size: $base-size + 1px;
+                position: absolute;
+                top: 50%;
+                right: 2rem;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

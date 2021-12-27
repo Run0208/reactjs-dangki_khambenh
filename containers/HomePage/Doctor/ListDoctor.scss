@@ -1,0 +1,47 @@
+.doctor {
+    padding: 5rem;
+    .title {
+        font-size: 3rem;
+        color: rgb(90, 180, 0);
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    .list-doctor {
+        display: block;
+        font-size: 1.8rem;
+        .doctor-item {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ccc;
+            &-image {
+                width: 30rem;
+                height: 20rem;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &-infor {
+                margin-left: 1rem;
+                display: inline-block;
+
+                span{
+                    font-weight: bold;
+                }
+
+                .name {
+                    font-size: 2rem;
+                }
+
+                .view {
+                    font-weight: bold;
+
+                    &:hover {
+                        color: rgb(3, 206, 3);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
