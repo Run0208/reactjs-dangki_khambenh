@@ -155,16 +155,14 @@
                         font-weight: 500;
                         position: absolute;
                         top: 100%;
-                        left: 50%;
                         bottom: 0;
-                        transform: translateX(-50%);
                         z-index: 99999999;
                         opacity: 0;
                         visibility: hidden;
                         transition: all 0.2s ease;
                         background-color: rgba(0, 0, 0, 0.2);
                         color: #fff;
-                        width: 0%;
+                        width: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -172,7 +170,6 @@
                     }
 
                     .section-image {
-                        width: 100%;
                         height: 20rem;
                         background-position: center center;
                         background-repeat: no-repeat;
@@ -258,13 +255,7 @@
 
 .section-about {
     width: 100%;
-<<<<<<< HEAD
     display: block;
-=======
-    // height: 50rem;
-    display: block;
-    padding: 5rem 0rem;
->>>>>>> d77d771d56492c8b7df2501e7253f1800494862a
     background-color: #fff;
 
     &-title {
@@ -274,23 +265,19 @@
 
     &-item {
         width: 100%;
-        // height: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
         &-video {
             width: 50%;
-            // height: 10rem;
 
             iframe {
                 width: 100%;
-                height: 100%;
                 aspect-ratio: 16/9;
             }
         }
         &-info {
             width: 50%;
-            // height: 100%;
             padding: 5rem 5rem;
             font-size: 1.4rem;
         }
