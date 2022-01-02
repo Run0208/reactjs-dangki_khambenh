@@ -258,7 +258,13 @@
 
 .section-about {
     width: 100%;
+<<<<<<< HEAD
     display: block;
+=======
+    // height: 50rem;
+    display: block;
+    padding: 5rem 0rem;
+>>>>>>> d77d771d56492c8b7df2501e7253f1800494862a
     background-color: #fff;
 
     &-title {
@@ -268,22 +274,23 @@
 
     &-item {
         width: 100%;
-        height: 90%;
+        // height: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
         &-video {
             width: 50%;
-            height: 100%;
+            // height: 10rem;
 
             iframe {
                 width: 100%;
-                height: 96%;
+                height: 100%;
+                aspect-ratio: 16/9;
             }
         }
         &-info {
             width: 50%;
-            height: 100%;
+            // height: 100%;
             padding: 5rem 5rem;
             font-size: 1.4rem;
         }
