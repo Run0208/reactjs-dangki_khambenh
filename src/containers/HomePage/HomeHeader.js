@@ -12,7 +12,7 @@ import slide1 from "../../assets/slider1.jpg";
 import slide2 from "../../assets/slider2.jpg";
 import slide3 from "../../assets/slider3.jpg";
 // import headerLogo from "../../assets/logo.svg";
-import headerLogo from "../../assets/Health.png";
+import headerLogo from "../../assets/MetroMed.jpg";
 
 class HomeHeader extends Component {
     changeLanguage = (language) => {

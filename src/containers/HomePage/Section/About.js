@@ -14,7 +14,7 @@ class About extends Component {
                <div className="section-about-item">
                    <div className="section-about-item-video">
                     <iframe 
-                        src="https://www.youtube.com/embed/HgpCEFNEyLk" 
+                        src="https://www.youtube.com/embed/x9WQdYJRDhI" 
                         title="YouTube video player" 
                         frameBorder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -23,7 +23,8 @@ class About extends Component {
                    </div>
                    <div className="section-about-item-info">
                         <p>
-                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                        Mỗi người dân hãy là một chiến sĩ trong công cuộc chống dịch, Việt Nam sẽ chiến thắng đại dịch.
+                       
                         </p>
                    </div>
                </div>
