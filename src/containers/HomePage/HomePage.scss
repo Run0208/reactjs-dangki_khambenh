@@ -298,10 +298,6 @@
     }
 }
 
-.section-footer {
-    // width: 100%;
-}
-
 .section-copyright {
     border-top: 1px solid #fff;
     top: 0;
@@ -332,7 +328,7 @@
 }
 .section-footer{
     position: relative;
-    background: rgb(17, 9, 9);
+    background: #00a4c5;
     color: #fff;
     padding: 3rem 0;
     font-size: larger;
@@ -358,7 +354,7 @@
             font-size: 1.3rem;
             width: 100%;
             text-align: justify;
-            
+            letter-spacing: .005rem;
         }
     }
     .quickLink{
@@ -376,6 +372,7 @@
         p{
             font-size: 1.3rem;
             text-align: justify;
+            letter-spacing: .005rem;
         }
     }
     .footer-timeOpen{
@@ -395,6 +392,7 @@
         p{
             font-size: 1.3rem;
             text-align: justify;
+            letter-spacing: .005rem;
         }
         
     }
