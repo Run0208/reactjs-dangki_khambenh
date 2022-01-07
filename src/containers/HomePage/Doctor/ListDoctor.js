@@ -74,6 +74,7 @@ class ListDoctor extends Component {
                     <Pagination 
                         limit='4'
                         listDoctors={listDoctors}
+                        handleViewDetailDoctor={this.handleViewDetailDoctor}
                     />
                 </section>
                 <CopyRight />

@@ -6,6 +6,7 @@ const Pagination = (props) => {
   const initDataShow = props.limit && props.listDoctors ? props.listDoctors.slice(0, Number(props.limit)) : props.listDoctors;
   const [dataShow, setDataShow] = useState(initDataShow);
   
+  console.log(props);
   let pages = 1
   let range = []
   
@@ -25,8 +26,7 @@ const Pagination = (props) => {
     
     setCurrPage(page)
   }
-    
-    
+  
   return (
     <div className="list-doctor">
       {
@@ -67,7 +67,7 @@ const Pagination = (props) => {
                 </div>
                 <div
                 className="view"
-                  onClick={() => this.handleViewDetailDoctor(item)}
+                  onClick={() => props.handleViewDetailDoctor(item)}
                 >
                   Xem thêm 
                 </div>
