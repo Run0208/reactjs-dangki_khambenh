@@ -27,6 +27,7 @@ class DashBoard extends Component {
         let resDoctor = await getAllDoctors();
         let resSpecialty = await getAllSpecialty();
         let resPatient = await getAllPatient();
+        
         if(resClinic && resClinic.errCode === 0) {
             this.setState({
                 dataClinics: resClinic.data ? resClinic.data : [],
@@ -74,9 +75,8 @@ class DashBoard extends Component {
                     <div className="dashboard-top-left">
                         {
                             statusCard.map((item, index) => (
-                                
                                 <StatusCard
-                                    key={index}
+                                    key={index + 1}
                                     name={item.name}
                                     icon={item.icon}
                                     count={item.count}

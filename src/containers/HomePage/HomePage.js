@@ -14,45 +14,41 @@ import CopyRight from './Section/CopyRight';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 class HomePage extends Component {
+  render() {
 
+    let settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 3
+    };
 
-    render() {
-
-        let settings = {
-            dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 3
-        };
-        
-
-        return (
-            <div>
-                <HomeHeader isShowBanner={true} />
-                <Specialty settings={settings} /> 
-                <Clinic settings={settings} />
-                <Doctor settings={settings} />
-                <About />
-                <Footer />
-                <CopyRight />
-            </div>
-        );
-    }
+    return (
+      <div>
+        <HomeHeader isShowBanner={true} />
+        <Specialty settings={settings} /> 
+        <Clinic settings={settings} />
+        <Doctor settings={settings} />
+        <About />
+        <Footer />
+        <CopyRight />
+      </div>
+    );
+  }
 
 }
 
 const mapStateToProps = state => {
-    return {
-        isLoggedIn: state.user.isLoggedIn
-    };
+  return {
+    isLoggedIn: state.user.isLoggedIn
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-    };
+  return {
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

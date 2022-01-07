@@ -24,9 +24,15 @@ class HomeHeader extends Component {
         }
     }
 
-    handleListDoctor = (doctor) => {
+    handleListDoctor = () => {
         if(this.props.history) {
             this.props.history.push(`/list-doctor`)
+        }
+    }
+
+    handleCovid19 = () => {
+        if(this.props.history) {
+            this.props.history.push(`/covid-19`)
         }
     }
 
@@ -62,7 +68,9 @@ class HomeHeader extends Component {
                                     </div>
                                 </li>
                                 <li className="menu-list-item">
-                                    <FormattedMessage id="header.package-menu"/>
+                                    <div onClick={() => this.handleCovid19()}>
+                                        <FormattedMessage id="header.covid-19"/>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

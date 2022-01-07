@@ -1,57 +1,42 @@
 import React, { Component } from 'react';
 import {XAxis, YAxis, CartesianGrid, Tooltip, Bar, BarChart, Legend} from 'recharts';
-
+import { getAllDoctors } from '../../../services/userService';
 
 
 class Chart extends Component {
   constructor(props) {
     super(props);
+   
     this.state = {
+      dataDoctors: []
+    }
+  }
+
+  async componentDidMount() {
+    let resDoctor = await getAllDoctors();
+
+    if(resDoctor && resDoctor.errCode === 0) {
+      this.setState({
+          dataDoctors: resDoctor.data ? resDoctor.data : [],
+      })
     }
   }
 
   render() {
-    console.log(this.props);
 
-    const list = [
-      {
-        "name": "Page A",
-        "pv": 2400
-      },
-      {
-        "name": "Page B",
-        "pv": 1398
-      },
-      {
-        "name": "Page C",
-        "pv": 9800
-      },
-      {
-        "name": "Page D",
-        "pv": 3908
-      },
-      {
-        "name": "Page E",
-        "pv": 4800
-      },
-      {
-        "name": "Page F",
-        "pv": 3800
-      },
-      {
-        "name": "Page G",
-        "pv": 4300
-      }
-    ]
+    // let { dataDoctors } = this.state;
+    let { listData } = this.props;
+    console.log(listData);
 
+    
     return (
-      <BarChart width={730} height={250} data={list}>
+      <BarChart width={750} height={300} data={listData}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey={'firstName'} />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
+        <Bar dataKey={'id'} fill="#8884d8" />
       </BarChart>
     );
   }

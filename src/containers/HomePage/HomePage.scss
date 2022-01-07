@@ -46,7 +46,8 @@
       }
     }
 
-    .section-list, .doctor-list {
+    .section-list,
+    .doctor-list {
       width: 100%;
 
       // next prev
@@ -59,8 +60,7 @@
         transition: all 0.2s linear;
 
         &:hover {
-            background-color:rgba(255,255,255,0.6);
-
+          background-color: rgba(255, 255, 255, 0.6);
         }
       }
       .slick-disabled {
@@ -159,31 +159,30 @@
     }
 
     .doctor-list {
-        .slick-arrow {
-            position: absolute;
-            width: 4rem;
-            height: 100%;
-            z-index: 4;
-            background: transparent;
-            transition: all 0.2s linear;
-    
-            &:hover {
-                background-color:rgba(0,0,0,0.4);
-    
-            }
-          }
+      .slick-arrow {
+        position: absolute;
+        width: 4rem;
+        height: 100%;
+        z-index: 4;
+        background: transparent;
+        transition: all 0.2s linear;
 
-        .slick-next {
-            right: 1px;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-    
-          .slick-prev {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-          }
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      .slick-next {
+        right: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .slick-prev {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 }

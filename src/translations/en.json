@@ -3,7 +3,7 @@
         "specialty-menu": "Specialty",
         "facility-menu": "Health facilities",
         "doctor-menu": "Doctor",
-        "package-menu": "Examination package",
+        "covid-19": "Covid-19",
         "support": "Support",
         "language": "EN",
         "welcome": "Welcome, "
@@ -49,7 +49,9 @@
         "role": "Role ID",
         "image": "Avatar",
         "create": "Create",
-        "update": "Update"
+        "update": "Update",
+        "user-list": "User list"
+
     },
     "home-page": {
         "see-more": "See more",

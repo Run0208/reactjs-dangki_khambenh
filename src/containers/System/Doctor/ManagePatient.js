@@ -33,7 +33,7 @@ class ManagePatient extends Component {
     }
 
     async componentDidMount() {
-        this.getDataPatient();
+       this.getDataPatient();
     }
 
      async componentDidUpdate(prevProps, prevState) {
@@ -51,6 +51,7 @@ class ManagePatient extends Component {
             doctorId: user.id,
             date: formatedDate
         });
+
         if(res && res.errCode === 0) {
             this.setState({
                 dataPatient: res.data
@@ -220,119 +221,119 @@ class ManagePatient extends Component {
     }
 
     
-    render() {
-        let { dataPatient, isOpenModal, isOpenModalOnlineClinic, isOpenModalBlocked, dataModal } = this.state;
-        let { language } = this.props;
-        return (
-            <>
-                <LoadingOverlay
-                active={this.state.isLoading}
-                spinner
-                text='Loading...'
-                >
-                    <div className="manage-patient">
-                        <h2 className="title">
-                            Quản lý bệnh nhân khám bệnh
-                        </h2>
+  render() {
+    let { dataPatient, isOpenModal, isOpenModalOnlineClinic, isOpenModalBlocked, dataModal } = this.state;
+    let { language } = this.props;
+    return (
+      <>
+        <LoadingOverlay
+        active={this.state.isLoading}
+        spinner
+        text='Loading...'
+        >
+        <div className="manage-patient">
+          <h2 className="title">
+            Quản lý bệnh nhân khám bệnh
+          </h2>
 
-                        <div className="manage-patient-body">
-                            <div className="row">
-                                <div className="col-4 form-group">
-                                    <label>Chọn ngày khám</label>
-                                    <DatePicker
-                                        onChange={this.handleOnChangeDatePicker}  
-                                        className="form-control doctor-date"   
-                                        value={ this.state.date }
-                                    />
-                                </div>
-                                <div className="col-12 form-group patient-list">
-                                    <label>Danh sách bệnh nhân khám bệnh</label>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <th>STT</th>
-                                                <th>Email</th>
-                                                <th>Full Name</th>
-                                                <th>address</th>
-                                                <th>Phone number</th>
-                                                <th>gender</th>
-                                                <th>Time</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            {
-                                                dataPatient && dataPatient.length > 0 ?
-                                                dataPatient.map((item, index) => {
-                                                    let time = language === LANGUAGES.VI ? 
-                                                    item.timeTypeDataPatient.valueVi : item.timeTypeDataPatient.valueEn;
-                                                    let gender = language === LANGUAGES.VI ? 
-                                                    item.patientIdData.genderIdData.valueVi: item.patientIdData.genderIdData.valueEn
-                                                    return (
-                                                        <tr key={index}>
-                                                            <td>{index + 1}</td>
-                                                            <td>{item.patientIdData.email}</td>
-                                                            <td>{item.patientIdData.fullName}</td>
-                                                            <td>{item.patientIdData.address}</td>
-                                                            <td>{item.patientIdData.phoneNumber}</td>
-                                                            <td>{gender}</td>
-                                                            <td>{time}</td>
-                                                            <td className="actions">
-                                                                <div className="btn-container">
-                                                                    <button
-                                                                        className="btn btn-confirm"
-                                                                        onClick={() => this.handleConfirm(item)}
-                                                                    >
-                                                                        Confirm
-                                                                    </button>
-                                                                    <button
-                                                                        className="btn btn-link-online"
-                                                                        onClick={() => this.handleOnlineClinic(item)}
-                                                                    >
-                                                                        Meeting
-                                                                    </button>
-                                                                    <button
-                                                                        className="btn btn-block"
-                                                                        onClick={() => this.handleBlocked(item)}
-                                                                    >
-                                                                        Block
-                                                                    </button>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })
-                                                :
-                                                <tr>
-                                                    <td colSpan="8">No data...</td>
-                                                </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <RemedyModal 
-                        dataModal={dataModal}
-                        sendRemedy={this.sendRemedy}
-                        isOpenModal={isOpenModal}
-                        closeRemedyModal={this.closeRemedyModal}
-                    />
-                    <RemedyModalOnlineClinic 
-                        dataModal={dataModal}
-                        sendRemedyOnlineClinic={this.sendRemedyOnlineClinic}
-                        isOpenModalOnlineClinic={isOpenModalOnlineClinic}
-                        closeRemedyModal={this.closeRemedyModal}
-                    />
-                    <RemedyModalBlocked 
-                        dataModal={dataModal}
-                        sendBlockedNotification={this.sendBlockedNotification}
-                        isOpenModalBlocked={isOpenModalBlocked}
-                        closeRemedyModal={this.closeRemedyModal}
-                    />
-                </LoadingOverlay>
-            </>
-        );
-    }
+          <div className="manage-patient-body">
+            <div className="row">
+              <div className="col-4 form-group">
+                <label>Chọn ngày khám</label>
+                <DatePicker
+                  onChange={this.handleOnChangeDatePicker}  
+                  className="form-control doctor-date"   
+                  value={ this.state.date }
+                />
+              </div>
+              <div className="col-12 form-group patient-list">
+                <label>Danh sách bệnh nhân khám bệnh</label>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>STT</th>
+                      <th>Email</th>
+                      <th>Full Name</th>
+                      <th>address</th>
+                      <th>Phone number</th>
+                      <th>gender</th>
+                      <th>Time</th>
+                      <th>Actions</th>
+                    </tr>
+                    {
+                      dataPatient && dataPatient.length > 0 ?
+                      dataPatient.map((item, index) => {
+                        let time = language === LANGUAGES.VI ? 
+                        item.timeTypeDataPatient.valueVi : item.timeTypeDataPatient.valueEn;
+                        let gender = language === LANGUAGES.VI ? 
+                        item.patientIdData.genderIdData.valueVi: item.patientIdData.genderIdData.valueEn
+                        return (
+                          <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{item.patientIdData.email}</td>
+                            <td>{item.patientIdData.fullName}</td>
+                            <td>{item.patientIdData.address}</td>
+                            <td>{item.patientIdData.phoneNumber}</td>
+                            <td>{gender}</td>
+                            <td>{time}</td>
+                            <td className="actions">
+                              <div className="btn-container">
+                                <button
+                                  className="btn btn-confirm"
+                                  onClick={() => this.handleConfirm(item)}
+                                >
+                                  Confirm
+                                </button>
+                                <button
+                                  className="btn btn-link-online"
+                                  onClick={() => this.handleOnlineClinic(item)}
+                                >
+                                  Meeting
+                                </button>
+                                <button
+                                  className="btn btn-block"
+                                  onClick={() => this.handleBlocked(item)}
+                                >
+                                  Block
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        )
+                      })
+                      :
+                      <tr>
+                        <td colSpan="8">No data...</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <RemedyModal 
+            dataModal={dataModal}
+            sendRemedy={this.sendRemedy}
+            isOpenModal={isOpenModal}
+            closeRemedyModal={this.closeRemedyModal}
+        />
+        <RemedyModalOnlineClinic 
+            dataModal={dataModal}
+            sendRemedyOnlineClinic={this.sendRemedyOnlineClinic}
+            isOpenModalOnlineClinic={isOpenModalOnlineClinic}
+            closeRemedyModal={this.closeRemedyModal}
+        />
+        <RemedyModalBlocked 
+            dataModal={dataModal}
+            sendBlockedNotification={this.sendBlockedNotification}
+            isOpenModalBlocked={isOpenModalBlocked}
+            closeRemedyModal={this.closeRemedyModal}
+        />
+        </LoadingOverlay>
+      </>
+    );
+  }
 }
 
 const mapStateToProps = state => {

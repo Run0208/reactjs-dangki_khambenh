@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import Pagination from './Pagination';
+import Search from './Search';
+import { filter } from 'lodash';
 import { connect } from 'react-redux';
+import HomeHeader from '../HomeHeader';
 import { withRouter } from 'react-router';
 import { LANGUAGES } from '../../../utils';
+import CopyRight from '../Section/CopyRight';
 import { FormattedMessage } from 'react-intl';
 import * as actions from '../../../store/actions';
-import HomeHeader from '../HomeHeader';
-import CopyRight from '../Section/CopyRight';
 
 import './ListDoctor.scss';
 
@@ -14,6 +17,7 @@ class ListDoctor extends Component {
         super(props);
         this.state = {
             listDoctors: [],
+            keyword: '',            
         }
     }
 
@@ -24,7 +28,7 @@ class ListDoctor extends Component {
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.allDoctors !== this.props.allDoctors) {
             this.setState({
-                listDoctors: this.props.allDoctors
+                listDoctors: this.props.allDoctors,
             })
         }
     }
@@ -35,68 +39,42 @@ class ListDoctor extends Component {
         }
     }
 
-    render() {
-        let listDoctors = this.state.listDoctors;
+    handleSearchDoctor = (keyword) => {
+        this.setState({
+            keyword: keyword
+        })
+    }
 
-        console.log(listDoctors);
+    render() {
         let { language } = this.props;
+        let { listDoctors, keyword } = this.state;
+
+        for (var i = 0; i < listDoctors.length; i++) {
+            console.log(listDoctors[i].email);
+        }
+
+        if(keyword) {
+            listDoctors = listDoctors.filter((doctor) => {
+                return doctor.firstName.toLowerCase().indexOf(filter.firstName) !== -1;
+            })
+        }
+        
         return (
             <>
                 <HomeHeader isShowBanner={false} />
                 <section className="doctor">
+                    <Search 
+                        className="search"
+                        keyword={keyword}
+                        handleSearchDoctor={this.handleSearchDoctor}
+                    />
                     <h2 className="title">
                             Danh sách bác sĩ
                     </h2>
-                    <div className="list-doctor">
-                        {
-                            listDoctors && listDoctors.length > 0 
-                            && listDoctors.map((item, index) => {
-                                let imageBase64 = '';
-                                if(item.image) {
-                                    imageBase64 = Buffer.from(item.image, 'base64').toString('binary');
-                                }
-                                let nameVi = `${item.lastName} ${item.firstName}`;
-                                let nameEn = `${item.firstName} ${item.lastName}`;
-                                return (
-                                    <div 
-                                        className="doctor-item" 
-                                        key={index}
-                                        
-                                    >
-                                        <div 
-                                            className="doctor-item-image"
-                                            style={{backgroundImage: `url(${imageBase64})`}}
-                                        ></div>
-
-                                        <div className="doctor-item-infor">
-                                            <div className="name">
-                                                <span>Doctor: </span>
-                                                {language === LANGUAGES.VI ? nameVi : nameEn}
-                                            </div>
-                                            <div>
-                                                <span>Email: </span>
-                                                {item.email}
-                                            </div>
-                                            <div>
-                                                <span>Phone number: </span>
-                                                {item.phoneNumber}
-                                            </div>
-                                            <div>
-                                                <span>Address: </span>
-                                                {item.address}
-                                            </div>
-                                            <div
-                                            className="view"
-                                                onClick={() => this.handleViewDetailDoctor(item)}
-                                            >
-                                                Xem thêm 
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            })
-                        }
-                    </div>
+                    <Pagination 
+                        limit='4'
+                        listDoctors={listDoctors}
+                    />
                 </section>
                 <CopyRight />
             </>
