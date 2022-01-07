@@ -11,6 +11,7 @@ import './HomeHeader.scss';
 import slide1 from '../../assets/slider1.jpg';
 import slide2 from '../../assets/slider2.jpg';
 import slide3 from '../../assets/slider3.jpg';
+import logo from '../../assets/logo.jpg' 
 
 class HomeHeader extends Component {
 
@@ -47,49 +48,52 @@ class HomeHeader extends Component {
 
         let language = this.props.language;
         return (
-
-            <React.Fragment>
-                <div className="header-menu">
-                    <div className="menu-content">
-                        <div className="menu-left">
-                            <div className="menu-left-logo" onClick={() => this.returnToHome()}></div>
-                        </div>
-                        <div className="menu-center">
-                            <ul className="menu-list">
-                                <li className="menu-list-item">
-                                    <FormattedMessage id="header.specialty-menu"/>
-                                </li>
-                                <li className="menu-list-item">
-                                    <FormattedMessage id="header.facility-menu"/>
-                                </li>
-                                <li className="menu-list-item">
-                                    <div onClick={() => this.handleListDoctor()}>
-                                        <FormattedMessage id="header.doctor-menu"/> 
-                                    </div>
-                                </li>
-                                <li className="menu-list-item">
-                                    <div onClick={() => this.handleCovid19()}>
-                                        <FormattedMessage id="header.covid-19"/>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="menu-right">
-                            <div className="menu-support">
-                                <i className="far fa-question-circle"></i>
-                                <span>
-                                    <FormattedMessage id="header.support"/>
-                                </span>
-                            </div>
-                            <div className={language === LANGUAGES.VI ? 'menu-language-vi active' : 'menu-language-vi'}>
-                                <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span>
-                            </div>
-                            <div className={language === LANGUAGES.EN ? 'menu-language-en active' : 'menu-language-en'}>
-                                <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
-                            </div>
-                        </div>
+          <React.Fragment>
+            <div className="header-menu">
+              <div className="container">
+                <div className="menu-content">
+                  <div className="header-logo">
+                    <img
+                      className="menu-left-logo"
+                      src={logo}
+                      onClick={() => this.returnToHome()}
+                    />
+                  </div>
+                  <ul className="menu-list">
+                    <li className="menu-list-item">
+                      <FormattedMessage id="header.specialty-menu"/>
+                    </li>
+                    <li className="menu-list-item">
+                      <FormattedMessage id="header.facility-menu"/>
+                    </li>
+                    <li className="menu-list-item">
+                      <div onClick={() => this.handleListDoctor()}>
+                        <FormattedMessage id="header.doctor-menu"/> 
+                      </div>
+                    </li>
+                    <li className="menu-list-item">
+                      <div onClick={() => this.handleCovid19()}>
+                        <FormattedMessage id="header.covid-19"/>
+                      </div>
+                      </li>
+                  </ul>
+                  <div className="menu-right">
+                    <div className="menu-support">
+                      <i className="far fa-question-circle"></i>
+                      <span>
+                        <FormattedMessage id="header.support"/>
+                      </span>
                     </div>
+                    <div className={language === LANGUAGES.VI ? 'menu-language-vi active' : 'menu-language-vi'}>
+                      <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span>
+                    </div>
+                    <div className={language === LANGUAGES.EN ? 'menu-language-en active' : 'menu-language-en'}>
+                      <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
                 {
                     this.props.isShowBanner === true && 
                     <Slider {...settings}>

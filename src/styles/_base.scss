@@ -1,10 +1,11 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: $fontmain;
@@ -13,49 +14,48 @@ body, html {
     overflow-x: hidden;
 }
 .main-container {
-  .Toastify {
-    font-size: 1.6rem;
-  }
+    .Toastify {
+        font-size: 1.6rem;
+    }
 }
 
 div._loading_overlay_wrapper {
-  position: unset;
+    position: unset;
 
-  ._loading_overlay_overlay {
-      z-index: 100000;
-      font-size: 1.6rem;
-      color: rgb(0, 199, 0);
-  }
+    ._loading_overlay_overlay {
+        z-index: 100000;
+        font-size: 1.6rem;
+        color: rgb(0, 199, 0);
+    }
 }
 
 .content-container {
-  display: flex;
-  .header-container {
-    width: 22%;
-  }
-  
-  .system-container {
-    width: 78%;
-    height: 100vh;
-    overflow-y: scroll;
-  }
+    display: flex;
+    .header-container {
+        width: 22%;
+    }
 
-  .title {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: $base-size + 4px;
-    margin-top: 15px;
-    color: $colormain;
-  }
-  .content {
-    margin: 15px 30px;
-    box-shadow: 2px 2px 4px 0 $box-shadow-color;
-    -webkit-box-shadow: 2px 2px 4px 0 $box-shadow-color;
-  }
+    .system-container {
+        width: 78%;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: $base-size + 4px;
+        margin-top: 15px;
+        color: $colormain;
+    }
+    .content {
+        margin: 15px 30px;
+        box-shadow: 2px 2px 4px 0 $box-shadow-color;
+        -webkit-box-shadow: 2px 2px 4px 0 $box-shadow-color;
+    }
 }
 
 .home-container {
-  display: block;
+    display: block;
 }
-
