@@ -84,8 +84,7 @@ class Specialty extends Component {
                                                         ? nameVi
                                                         : nameEn}
                                                 </span>
-                                                <span>Xương khớp</span>
-                                            </div>
+                                              </div>
                                         </div>
                                     );
                                 })}

@@ -1,5 +1,6 @@
 .doctor {
     padding: 5rem;
+
     .title {
         font-size: 3rem;
         color: rgb(90, 180, 0);
@@ -7,9 +8,49 @@
         margin-bottom: 2rem;
     }
 
+    .search-doctor {
+        width: 40rem;
+        height: 4rem;
+        float: right;
+        display: flex;
+        .input-search {
+            width: 75%;
+            height: 100%;
+            font-size: 1.6rem;
+            // border: none;
+            outline: none;
+            padding: 0 1.5rem;
+        }
+        
+        .input-gr-btn {
+            width: 25%;
+            height: 100%;
+            .btn-search {
+                width: 100%;
+                height: 100%;
+                color: white;
+                font-size: 1.6rem;
+                font-weight: 600;
+                background: #3498db;
+                border: none;
+                outline: none;
+                span {
+    
+                }
+                &:hover {
+                    background: #2980b9;
+                }
+            }
+    
+        }
+    }
+
     .list-doctor {
-        display: block;
         font-size: 1.8rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
         .doctor-item {
             display: flex;
             margin-bottom: 1rem;
@@ -42,6 +83,39 @@
                     }
                 }
             }
+        }
+
+        .table__pagination {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+        
+            &-item ~ &-item {
+                margin-left: 1rem;
+            }
+        
+            &-item {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+        
+                &:hover {
+                    color: white;
+                    background-color: #4caf50;
+                }
+            }
+        
+            &-item.active, &-item.active:hover {
+                background-color: #019707;
+                color: white;
+                font-weight: 600;
+            } 
         }
     }
 }

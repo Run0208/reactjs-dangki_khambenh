@@ -119,20 +119,26 @@ const getAllPatient = () => {
     return axios.get(`/api/get-all-patient`);
 }
 
-const getAllPatientForDoctor= (data) => {
+const getAllPatientForDoctor = (data) => {
     return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`);
 }
 
-const postSendRemedy= (data) => {
+const postSendRemedy = (data) => {
     return axios.post('/api/send-remedy', data);
 }
 
-const postSendRemedyOnlineClinic= (data) => {
+const postSendRemedyOnlineClinic = (data) => {
     return axios.post('/api/send-online-class-room', data);
 }
 
-const postSendBlockedNotification= (data) => {
+const postSendBlockedNotification = (data) => {
     return axios.post('/api/send-blocked-notification', data);
+}
+
+// ---------------- API COVID-19 ----------------
+
+const getApiCovid19 = () => {
+    return axios.get('https://static.pipezero.com/covid/data.json')
 }
 
 export { 
@@ -148,11 +154,8 @@ export {
     getAllDetailSpecialtyById, createNewClinic,
     getAllClinic, getAllDetailClinicById,
     getAllPatientForDoctor, postSendRemedy,
-    postSendRemedyOnlineClinic,
-    deleteSpecialtyService,
-    editSpecialtyService,
-    deleteClinicService,
-    editClinicService,
-    postSendBlockedNotification,
-    getAllPatient
+    postSendRemedyOnlineClinic, deleteSpecialtyService,
+    editSpecialtyService, deleteClinicService,
+    editClinicService, postSendBlockedNotification,
+    getAllPatient, getApiCovid19
 };

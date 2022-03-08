@@ -169,8 +169,12 @@ class BookingModal extends Component {
     render() {
         let { isOpenModalBooking, closeBookingModal, dataTime } = this.props;
         let doctorId = '';
+        let doctorName = '';
         if(dataTime && !_.isEmpty(dataTime)) {
             doctorId = dataTime.doctorId
+        }
+        if(dataTime && !_.isEmpty(dataTime)) {
+            doctorName = dataTime.doctorIdData.lastName + ' ' + dataTime.doctorIdData.firstName
         }
         return (
             <LoadingOverlay
@@ -200,6 +204,7 @@ class BookingModal extends Component {
                                 <div className="doctor-infor-content">
                                     <ProfileDoctor 
                                         doctorId={doctorId}
+                                        doctorName={doctorName}
                                         isShowDescDoctor={false}
                                         dataTime={dataTime}
                                         isShowLinkDetail={false}

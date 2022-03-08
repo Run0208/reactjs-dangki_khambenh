@@ -7,7 +7,7 @@ import { adminMenu, doctorMenu } from "./menuApp";
 import { LANGUAGES, USER_ROLE } from "../../utils";
 import { FormattedMessage } from "react-intl";
 import _ from "lodash";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.jpg";
 
 import "./Header.scss";
 

@@ -212,11 +212,11 @@ class UserRedux extends Component {
                 <div className="section-user-content">
                     <div className="container">
                         <div className="row">
-                            <div className="col-12">
+                            {/* <div className="col-12">
                                 <h2>
                                     <FormattedMessage id="manage-user.add" />
                                 </h2>
-                            </div>
+                            </div> */}
                             <div className="col-9">
                                 <div className="row">
                                     <div className="col-3">
@@ -239,7 +239,7 @@ class UserRedux extends Component {
                                         <input 
                                             type="password" 
                                             className="form-control" 
-                                            placeholder="Passworl" 
+                                            placeholder="Passworld" 
                                             value={password}
                                             onChange={(event) => { this.onChangeInput(event, 'password') }}
                                             disabled={this.state.action === CRUD_ACTIONS.EDIT ? true: false}

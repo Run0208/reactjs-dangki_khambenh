@@ -16,9 +16,9 @@ export const adminMenu = [
                 name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
 
             },
-            { // Quản lý kế hoạch khám bệnh của bác sĩ
-                 name: 'menu.doctor.manage-schedule', link: '/doctor/manage-schedule'
-            },
+            // { // Quản lý kế hoạch khám bệnh của bác sĩ
+            //      name: 'menu.doctor.manage-schedule', link: '/doctor/manage-schedule'
+            // },
             {
                 name: 'menu.admin.manage-clinic', link: '/system/manage-clinic'
             },

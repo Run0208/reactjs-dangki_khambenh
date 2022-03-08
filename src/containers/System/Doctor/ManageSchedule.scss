@@ -1,75 +1,71 @@
 .manage-schedule {
-    font-size: 1.8rem;
-    padding: 5rem 3rem;
-    .title {
-        text-align: center;
-        font-weight: bold;
-        color: rgb(0, 173, 0);
-        font-size: 3rem;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-      }
+  font-size: 1.8rem;
+  padding: 5rem 3rem;
+  .title {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 173, 0);
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
 
-    &-content {
-        width: 100%;
-        height: 100%;
+  &-content {
+    width: 100%;
+    height: 100%;
 
-        label {
-            font-size: 1.8rem;
-        }
-
-        .row {
-            width: 100%;
-            height: auto;
-            
-            .doctor-option {
-                .doctor-select {
-                    font-size: 1.6rem;
-                }
-
-                .doctor-date {
-                    font-size: 1.6rem;
-                }
-            }
-
-            .choose-time-list {
-                width: 100%;
-                height: 100%;
-                border: 1px solid gray;
-                padding: 3rem 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-wrap: wrap;
-                column-gap: 1rem;
-                row-gap: 1rem;
-
-                .choose-time-item {
-                    width: 20%;
-                    padding: 1rem 0rem;
-                    border: 1px solid gray;
-                    font-size: 1.5rem;
-                    font-weight: 400;
-                    border: none;
-
-                    &.active {
-                        background: rgb(69,195,210);
-                        color: white;
-                    }
-                }
-            }
-
-            .btn-save {
-                font-size: 1.6rem;
-                font-weight: bold;
-                padding: 1rem 2rem;
-                margin: auto;
-                margin-top: 3rem;
-
-            }
-        }
-
+    label {
+      font-size: 1.8rem;
     }
 
+    .row {
+      width: 100%;
+      height: auto;
 
+      .doctor-option {
+        .doctor-select {
+          font-size: 1.6rem;
+        }
+
+        .doctor-date {
+          font-size: 1.6rem;
+        }
+      }
+
+      .choose-time-list {
+        width: 100%;
+        height: 100%;
+        border: 1px solid gray;
+        padding: 3rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+        row-gap: 1rem;
+
+        .choose-time-item {
+          width: 20%;
+          padding: 1rem 0rem;
+          border: 1px solid gray;
+          font-size: 1.5rem;
+          font-weight: 400;
+          border: none;
+
+          &.active {
+            background: rgb(69, 195, 210);
+            color: white;
+          }
+        }
+      }
+
+      .btn-save {
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        margin: auto;
+        margin-top: 3rem;
+      }
+    }
+  }
 }

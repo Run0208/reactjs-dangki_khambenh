@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
+import { FormattedMessage } from 'react-intl';
+
  
 import './TableManageUser.scss';
 
@@ -37,7 +39,9 @@ class TableManageUser extends Component {
         let listUsers = this.state.userArray;   
         return (
                 <div className="user-container">
-                    <h1 className="title-user">TABLE USERS</h1>
+                    <h1 className="title-user">
+                        <FormattedMessage id="manage-user.user-list" />
+                    </h1>
                     <div className="users-table">
                         <table id="customers">
                             <thead>

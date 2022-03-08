@@ -82,12 +82,12 @@ class Login extends Component {
                         </div>
                         <div className="col-12 login-username">
                             <label>
-                                <i class="fas fa-envelope icon-input"></i>Email
+                                <i className="fas fa-envelope icon-input"></i>Email
                             </label>
 
                             <input
                                 type="text"
-                                autocomplete="off"
+                                autoComplete="off"
                                 value={this.state.username}
                                 onChange={(event) => {
                                     this.handleOnChangeUsername(event);
@@ -96,7 +96,7 @@ class Login extends Component {
                         </div>
                         <div className="col-12 login-password">
                             <label>
-                                <i class="fas fa-lock icon-input"></i>Password
+                                <i className="fas fa-lock icon-input"></i>Password
                             </label>
 
                             <input
@@ -105,7 +105,7 @@ class Login extends Component {
                                         ? "text"
                                         : "password"
                                 }
-                                autocomplete="off"
+                                autoComplete="off"
                                 value={this.state.password}
                                 onChange={(event) => {
                                     this.handleOnChangePassword(event);

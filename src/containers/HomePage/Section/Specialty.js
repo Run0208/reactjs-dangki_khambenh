@@ -32,47 +32,47 @@ class Specialty extends Component {
     render() {
         let { dataSpecialty } = this.state;
         return (
-            <section className="section-container section-specialty">
-                <div className="container">
-                    <div className="section-content">
-                        <div className="section-header">
-                            <h2>
-                                <FormattedMessage id="home-page.specialty-popular" />
-                            </h2>
-                        </div>
-                        <Slider
-                            {...this.props.settings}
-                            className="section-list"
-                        >
-                            {dataSpecialty &&
-                                dataSpecialty.length > 0 &&
-                                dataSpecialty.map((item, index) => {
-                                    return (
-                                        <div
-                                            className="section-item section-item-specialty"
-                                            key={index}
-                                            onClick={() =>
-                                                this.handleViewDetailSpecialty(
-                                                    item
-                                                )
-                                            }
-                                        >
-                                            <div
-                                                className="section-image specialty-image"
-                                                style={{
-                                                    backgroundImage: `url(${item.image})`,
-                                                }}
-                                            ></div>
-                                            <span className="specily_name">
-                                                {item.name}
-                                            </span>
-                                        </div>
-                                    );
-                                })}
-                        </Slider>
-                    </div>
-                </div>
-            </section>
+          <section className="section-container section-specialty">
+          <div className="container">
+              <div className="section-content">
+                  <div className="section-header">
+                      <h2>
+                          <FormattedMessage id="home-page.specialty-popular" />
+                      </h2>
+                  </div>
+                  <Slider
+                      {...this.props.settings}
+                      className="section-list"
+                  >
+                      {dataSpecialty &&
+                          dataSpecialty.length > 0 &&
+                          dataSpecialty.map((item, index) => {
+                              return (
+                                  <div
+                                      className="section-item section-item-specialty"
+                                      key={index}
+                                      onClick={() =>
+                                          this.handleViewDetailSpecialty(
+                                              item
+                                          )
+                                      }
+                                  >
+                                      <div
+                                          className="section-image specialty-image"
+                                          style={{
+                                              backgroundImage: `url(${item.image})`,
+                                          }}
+                                      ></div>
+                                      <span className="specily_name">
+                                          {item.name}
+                                      </span>
+                                  </div>
+                              );
+                          })}
+                  </Slider>
+              </div>
+          </div>
+      </section>
         );
     }
 }

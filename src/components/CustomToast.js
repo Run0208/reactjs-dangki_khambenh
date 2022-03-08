@@ -22,21 +22,19 @@ class CustomToast extends Component {
                         <FormattedMessage id={titleId} />
                     </div>
                     {
-                        (message && typeof message === 'object') ?
-                            <CustomScrollBar autoHeight={true} autoHeightMin={50} autoHeightMax={100}>
-                                {
-                                    message.map((msg, index) => {
-                                        return (
-                                            <Fragment key={index}>
-                                                <div className="toast-content">{msg}</div>
-                                            </Fragment>
-                                        )
-                                    })
-                                }
-                            </CustomScrollBar> :
-                            <div className="toast-content">
-                                {message ? message : (messageId ? (<FormattedMessage id={messageId} />) : null)}
-                            </div>
+                      (message && typeof message === 'object') ?
+                        <CustomScrollBar autoHeight={true} autoHeightMin={50} autoHeightMax={100}>
+                          {
+                            message.map((msg, index) => {
+                              return (
+                                <div className="toast-content" key={index}>{msg}</div>
+                              )
+                            })
+                          }
+                        </CustomScrollBar> :
+                        <div className="toast-content">
+                          {message ? message : (messageId ? (<FormattedMessage id={messageId} />) : null)}
+                        </div>
                     }
                 </div>
             </Fragment>

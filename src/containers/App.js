@@ -19,6 +19,7 @@ import DetailDoctor from './Patient/Doctor/DetailDoctor';
 import DetailClinic from './Patient/Clinic/DetailClinic';
 import CustomScrollbars from '../components/CustomScrollbars';
 import DetailSpecialty from './Patient/Specialty/DetailSpecialty';
+import Covid19 from './HomePage/Covid19/Covid19';
 
 
 
@@ -62,6 +63,7 @@ class App extends Component {
                                     <div  className="home-container">
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.LIST_DOCTOR} component={ListDoctor} />
+                                    <Route path={path.COVID_19} component={Covid19} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />

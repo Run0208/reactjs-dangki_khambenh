@@ -69,7 +69,7 @@ class ProfileDoctor extends Component {
     
     render() {
         let { dataProfile } = this.state;
-        let { language, isShowDescDoctor, dataTime, isShowLinkDetail, isShowPrice, doctorId } = this.props;
+        let { language, isShowDescDoctor, dataTime, isShowLinkDetail, isShowPrice, doctorId, doctorName } = this.props;
         let nameVi = '', nameEn = '';
         if(dataProfile && dataProfile.positionData) {
             nameVi = `${dataProfile.positionData.valueVi}, ${dataProfile.lastName} ${dataProfile.firstName}`;
