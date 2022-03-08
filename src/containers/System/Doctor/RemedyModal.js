@@ -13,7 +13,8 @@ class RemedyModal extends Component {
         super(props);
         this.state = {
             email: '',
-            imageBase64: ''
+            imageBase64: '',
+            diagnose: ''
         }
     }
 
@@ -39,6 +40,11 @@ class RemedyModal extends Component {
             email: event.target.value
         })
     }
+    handleOnChangeDiagnose = (event) => {
+      this.setState({
+        diagnose: event.target.value
+      })
+    }
 
     handleOnChangeImage = async (event) => {
         let data = event.target.files;
@@ -55,44 +61,52 @@ class RemedyModal extends Component {
         this.props.sendRemedy(this.state)
     }
     
-    render() {
-        let { isOpenModal, closeRemedyModal } = this.props;
-        return (
-            <Modal 
-                isOpen={isOpenModal}
-                size="md"
-                centered
-                className={'remedy-modal'}
-            >
-                <div className="modal-header">
-                    <h3 className="modal-header-title">Gửi hóa đơn</h3>
-                    <span className="modal-header-btn" onClick={closeRemedyModal}>x</span>
-                </div>
-                <div className="modal-body">
-                    <div className="row">
-                        <div className="col-6 form-group">
-                        <span>Email Patient</span>
-                            <input type="email" className="form-control" 
-                                value={this.state.email}
-                                onChange={(event) => this.handleOnChangeEmail(event)}
-                            />
-                        </div>
-                        <div className="col-6 form-group">
-                            <span>Chèn file hóa đơn</span>
-                            <input type="file" className="form-control-file" 
-                                onChange={(event) => this.handleOnChangeImage(event)}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="modal-footer">
-                    <button className="btn-send" onClick={() => this.handleSendRemedy()}>Send</button>
-                    <button className="btn-cancel" onClick={closeRemedyModal} >Cancel</button>
-                </div>
-
-            </Modal> 
-        );
-    }
+  render() {
+    let { isOpenModal, closeRemedyModal } = this.props;
+    return (
+      <Modal 
+          isOpen={isOpenModal}
+          size="md"
+          centered
+          className={'remedy-modal'}
+      >
+        <div className="modal-header">
+          <h3 className="modal-header-title">Gửi hóa đơn</h3>
+          <span className="modal-header-btn" onClick={closeRemedyModal}>x</span>
+        </div>
+        <div className="modal-body">
+          <div className="row">
+            <div className="col-6 form-group">
+              <span>Email Patient</span>
+              <input type="email" className="form-control" 
+                value={this.state.email}
+                onChange={(event) => this.handleOnChangeEmail(event)}
+              />
+            </div>
+            <div className="col-6 form-group">
+              <span>Chèn file hóa đơn</span>
+              <input type="file" className="form-control-file" 
+                onChange={(event) => this.handleOnChangeImage(event)}
+                />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 form-group">
+              <span>Diagnosis for the patient</span>
+              <input type="text" className="form-control" 
+                value={this.state.diagnose}
+                onChange={(event) => this.handleOnChangeDiagnose(event)}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="modal-footer">
+          <button className="btn-send" onClick={() => this.handleSendRemedy()}>Send</button>
+          <button className="btn-cancel" onClick={closeRemedyModal} >Cancel</button>
+        </div>
+      </Modal> 
+    );
+  }
 }
 
 const mapStateToProps = state => {

@@ -23,11 +23,8 @@ class Chart extends Component {
   }
 
   render() {
-
     // let { dataDoctors } = this.state;
     let { listData } = this.props;
-    console.log(listData);
-
     
     return (
       <BarChart width={750} height={300} data={listData}>

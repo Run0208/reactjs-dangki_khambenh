@@ -167,7 +167,6 @@ class BookingModal extends Component {
     }
     
     render() {
-
         let { isOpenModalBooking, closeBookingModal, dataTime } = this.props;
         let doctorId = '';
         let doctorName = '';
@@ -177,7 +176,6 @@ class BookingModal extends Component {
         if(dataTime && !_.isEmpty(dataTime)) {
             doctorName = dataTime.doctorIdData.lastName + ' ' + dataTime.doctorIdData.firstName
         }
-        console.log(doctorName);
         return (
             <LoadingOverlay
                 active={this.state.isLoading}

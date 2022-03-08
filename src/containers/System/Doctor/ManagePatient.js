@@ -130,15 +130,16 @@ class ManagePatient extends Component {
             isLoading: true
         })
         let res = await postSendRemedy({
-            email: data.email,
-            imageBase64: data.imageBase64,
-            fullName: dataModal.fullName,
-            phoneNumber: dataModal.phoneNumber,
-            address: dataModal.address,
-            doctorId: dataModal.doctorId,
-            patientId: dataModal.patientId,
-            timeType: dataModal.timeType,
-            language: this.props.language
+          email: data.email,
+          imageBase64: data.imageBase64,
+          diagnose: data.diagnose,
+          fullName: dataModal.fullName,
+          phoneNumber: dataModal.phoneNumber,
+          address: dataModal.address,
+          doctorId: dataModal.doctorId,
+          patientId: dataModal.patientId,
+          timeType: dataModal.timeType,
+          language: this.props.language
         })
         if(res && res.errCode === 0) {
             this.setState({

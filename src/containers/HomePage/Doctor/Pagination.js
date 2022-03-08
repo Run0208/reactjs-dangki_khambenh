@@ -6,7 +6,6 @@ const Pagination = (props) => {
   const initDataShow = props.limit && props.listDoctors ? props.listDoctors.slice(0, Number(props.limit)) : props.listDoctors;
   const [dataShow, setDataShow] = useState(initDataShow);
   
-  console.log(props);
   let pages = 1
   let range = []
   
@@ -21,7 +20,6 @@ const Pagination = (props) => {
   const selectPage = (page) => {
     const start = Number(props.limit) * page
     const end = start + Number(props.limit)
-    
     setDataShow(props.listDoctors.slice(start, end))
     
     setCurrPage(page)
@@ -89,7 +87,7 @@ const Pagination = (props) => {
                   </div>
               ) : null
           }
-      </div>
+    </div>
   )
 }
 

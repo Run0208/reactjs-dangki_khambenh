@@ -82,7 +82,7 @@ class Covid19 extends Component {
                                 className={isShowVn === false ? `none` : `active`}
                                 onClick={() => this.showVietNam(true)}
                             >
-                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i className="fa fa-star" aria-hidden="true"></i>
                                 Việt Nam
                             </div>
                             <div className="space">/</div>
@@ -90,7 +90,7 @@ class Covid19 extends Component {
                                 className={isShowGl === false ? `none` : `active`}
                                 onClick={() => this.showWorld(false)}
                             >
-                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <i className="fa fa-globe" aria-hidden="true"></i>
                                 Thế giới
                             </div>
                         </div>
